@@ -35,13 +35,29 @@ Le projet s'est tourné vers la génération automatique et/ou guidée de grands
 Les recherches en informatiques graphique autour de la génération procédurale d'environnements, la génération et  l'animation de foules sont nombreuses et fournissent de nombreuse approches différentes pour développer notre outil. Le choix a été fait de développer une \textit{add-on} de Blender, développée en Python, qui utilisera les techniques citées plus haut pour fonctionner. Cela prendra la forme de deux add-on différentes, le plus indépendantes possibles, mais interfaçables : une pour générer un environnement, l'autre pour peupler cet environnement.
 
 Les techniques de peuplement de scènes virtuelles existent depuis un moment, et sont pour la plupart disponible dans des logiciels de 3D commerciaux. La société ILM, avec le logiciel MASSIVE\cite{Massive} a révolutionné ce développement en interne pour créer les armées du \textit{Seigneur des Anneaux}. Un concurrent de MASSIVE est Goalem\cite{Golaem}. Aujourd'hui, même le logiciel généraliste 3DS MAX\cite{3dsmax} propose des fonctionnalités d'animation de foules réalistes. \\
-Concernant Blender, et même en  open source de manière générale, rien n'existe vraiment pour le moment. Un ancien script permettait de générer des foules de taille moyenne en situations de guerre, mais il donnait des résultats assez peu convaincants, et n'est surtout plus maintenu, et donc plu compatible avec les versions actuelles de blender.
+Concernant Blender, et même en  open source de manière générale, rien n'existe vraiment pour le moment. Un ancien script permettait de générer des foules de taille moyenne en situations de guerre, mais il donnait des résultats assez peu convaincants, et n'est surtout plus maintenu, et donc plu compatible avec les versions actuelles de Blender.
 
 Le but est de permettre à Blender de combler son retard sur les logiciels propriétaires concurrents. Actuellement l'intégralité des studio professionnels fonctionnent avec des logiciels propriétaires (et souvent hors de prix). Faire avancer Blender à leur niveau sur une fonctionnalité précise, voire les dépasser, permettrait aux artistes d'avoir accès à un outil à la pointe de la recherche, gratuitement (car open source).
 
 Le public visé forme actuellement une communauté déjà existante : les infographistes utilisant Blender pour créer leurs scènes 3D,. On peut même envisager d'attirer vers Blender des artistes utilisant pour le moment les logiciels 3D propriétaires, faute d'alternative open source.
 
 \section{Calendrier prévisionnel}
+\begin{description}
+  \item[- 5 Nov.] (4 semaines):  \textit{Recherches prévisionnelles}. 
+  \item[5 Nov. - 19 Nov.] (2 semaines): \textit{Recherches approfondies}.
+  \item[19 Nov. - 3 Déc.] (2 semaines): \textit{Code de base et prise en main de Blender}.
+  \item[3 Dec. - 7 Jan.] (5 semaines): \textit{Implémentation}.
+  \item[7 Jan. - 4 Fev.] (4 semaines) \textit{Interface graphique}.
+  \item[4 Fev. -] (en fonction de la soutenance..) \textit{Debug et ajout de fonctionnalités}.
+\end{description}
+
+\subsection*{Deadlines prévues}
+\begin{description}
+  \item[5 Nov.] Décision des méthodes à implémenter. 
+  \item[7 Jan.] Version fonctionnelle.
+  \item[4 Fev.] Version utilisable par le public.
+\end{description}
+
 
 \section{Répartition du travail (au démarrage)}
 
@@ -51,6 +67,8 @@ Pour le début du projet, nous avons décidé de créer quatre pôles de recherc
 \item Une équipe est chargée de rechercher ce qui a déjà été fait et publié concernant la génération ainsi que l'animation des foules. Dimitri, Johanna et Victor composent cette équipe.
 \item Une équipe est chargée de rechercher ce qui a déjà été fait et publié concernant la génération de villes et d'architectures. Cette équipe est composée de deux membres : Benjamin et Octave.
 \item Une équipe est chargée de recherche bibliographique concernant la génération de terrains "naturels". Guillaume est seul sur cette tâche.
+
+Une fois le travail de recherche fini, les équipes se réorganiseront en fonction de ce qui aura été décidé d'implémenter. Les "codeurs" aideront le reste du groupe à comprendre comment coder pour Blender
 \end{itemize}
 
 \newpage
