@@ -1,0 +1,101 @@
+\documentclass[11pt,usenames,dvipsnames]{beamer}
+
+\usetheme{CambridgeUS}
+\usecolortheme{dolphin}
+
+\usepackage{appendixnumberbeamer}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french, francais]{babel}
+\usepackage{array}
+\usepackage{stmaryrd}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{galois}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{subfig}
+\usepackage{listingsutf8}
+\usepackage{lmodern}
+\usepackage{caption}
+\usepackage{pifont}
+\usepackage{algpseudocode}
+\usepackage[plain]{algorithm}
+\usepackage{eqparbox}
+\usepackage{syntax}
+\usepackage{mdwtab}
+\usepackage{hyperref}
+\usepackage{tabularx}
+\usepackage{fancyvrb}
+\usepackage{color}%% \usepackage{color}
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+\definecolor{OliveGreen}{RGB}{0, 182, 12}%219, 0}
+\usepackage{xcolor}
+\uselanguage{French}
+\languagepath{French}
+\usepackage{tikz}
+\usetikzlibrary{calc}
+
+\usefonttheme[onlymath]{serif}
+
+
+\setbeamertemplate{itemize items}[triangle]
+\setbeamertemplate{enumerate items}[square]
+\setbeamertemplate{caption}[numbered]
+\beamertemplatenavigationsymbolsempty
+
+\newif\iflattersubsect
+
+
+\AtBeginSection[]
+{
+\begin{frame}<beamer>
+\tableofcontents[
+  currentsection,
+  sectionstyle=show/shaded,
+  subsectionstyle=show/show/hide%%shaded/hide
+%  \lattersubsectfalse
+]
+\end{frame}
+}
+
+%% \AtBeginSection[] {
+%%     \begin{frame}<beamer>
+%% %    \frametitle{Inhalt} %
+%%     \tableofcontents[currentsection]
+%%     \end{frame}
+%% }
+%% \setbeamertemplate{navigation symbols}{}{%
+%%     \usebeamerfont{footline}%
+%%     \usebeamercolor[fg]{footline}%
+%%     \hspace{1em}%
+%%     \insertframenumber/\inserttotalframenumber
+%% }
+
+\setbeamertemplate{section in toc}[circle]
+
+\author{Etienne, Pijus, Raphaël?}
+\title{Présentation de Blender/Python}
+\date{12 novembre 2015}
+
+
+\begin{document}
+
+\frame{\titlepage}
+
+
+\begin{frame}
+\tableofcontents[
+  currentsection,
+  sectionstyle=show/show,
+  subsectionstyle=hide/hide]
+\end{frame}
+
+
+
+
+
+\end{document}
