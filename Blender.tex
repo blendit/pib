@@ -165,7 +165,59 @@
 
 
 
-\section{Un peu d'orienté objet et de Python}
+\section{Les modules}
+\begin{frame}
+\begin{figure}
+  \begin{center}
+    \includegraphics[width=8cm]{module.pdf}
+  \end{center}
+\end{figure}
+\end{frame}
+
+\begin{frame}[fragile]
+Un fichier \textbf{\texttt{monmodule.py}} avec une classe \textbf{MaClasse}.
+
+Dans un autre fichier:
+  \begin{lstlisting}
+    import monmodule
+    
+    objet = monmodule.MaClasse()
+  \end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+Un fichier \textbf{\texttt{monmodule.py}} avec une classe \textbf{MaClasse}.
+
+Dans un autre fichier:
+  \begin{lstlisting}
+    from monmodule import MaClasse
+    
+    objet = MaClasse()
+  \end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+Un fichier \textbf{\texttt{monmodule.py}} avec une classe \textbf{MaClasse}.
+
+Dans un autre fichier:
+  \begin{lstlisting}
+    from monmodule import MaClasse, MaClasse2
+    
+    objet = MaClasse()
+  \end{lstlisting}
+\end{frame}
+
+
+\begin{frame}[fragile]
+Un fichier \textbf{\texttt{monmodule.py}} avec une classe \textbf{MaClasse}.
+
+Dans un autre fichier:
+  \begin{lstlisting}
+    from monmodule import *
+    
+    objet = MaClasse()
+  \end{lstlisting}
+\end{frame}
 
 \section{Scripts \& Addons}
 \begin{frame}[fragile]
