@@ -104,7 +104,7 @@
 
 \setbeamertemplate{section in toc}[circle]
 
-\author{Etienne, Pijus, Raphaël?}
+\author{Etienne, Pijus, Raphaël}
 \title{Présentation de Blender/Python}
 \date{12 novembre 2015}
 
@@ -164,11 +164,86 @@
 \end{frame}
 
 
+
 \section{Un peu d'orienté objet et de Python}
+
+\section{Scripts \& Addons}
+\begin{frame}[fragile]
+  \frametitle{Addon = Module}
+  \begin{lstlisting}
+bl_info = {"name": "My Test Addon", "category": "Object"}
+def register():
+    print("Hello World")
+def unregister():
+    print("Goodbye World")
+  \end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Du code simple...}
+  \begin{lstlisting}
+import bpy
+
+scene = bpy.context.scene
+for obj in scene.objects:
+    obj.location.x += 1.0
+  \end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{...À l'addon}
+  \begin{lstlisting}
+bl_info = {
+    "name": "Move X Axis",
+    "category": "Object",
+}
+
+import bpy
+
+
+class ObjectMoveX(bpy.types.Operator):
+  \end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+  \begin{lstlisting}
+class ObjectMoveX(bpy.types.Operator):
+    """My Object Moving Script"""      # blender will use this as a tooltip for menu items and buttons.
+    bl_idname = "object.move_x"        # unique identifier for buttons and menu items to reference.
+    bl_label = "Move X by One"         # display name in the interface.
+    bl_options = {'REGISTER', 'UNDO'}  # enable undo for the operator.
+
+    def execute(self, context):        # execute() is called by blender when running the operator.
+
+        # The original script
+        scene = context.scene
+        for obj in scene.objects:
+            obj.location.x += 1.0
+
+        return {'FINISHED'}            # this lets blender know the operator finished successfully.
+  \end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+  \begin{lstlisting}
+
+def register():
+    bpy.utils.register_class(ObjectMoveX)
+
+
+def unregister():
+    bpy.utils.unregister_class(ObjectMoveX)
+
+
+# This allows you to run the script directly from blenders text editor
+# to test the addon without having to install it.
+if __name__ == "__main__":
+    register()
+  \end{lstlisting}
+\end{frame}
 
 \section{Conventions de codage}
 
-\section{Scripts \& Addons}
 
 \begin{frame}
   \begin{itemize}
