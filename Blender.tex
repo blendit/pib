@@ -307,11 +307,81 @@ if __name__ == "__main__":
 \end{frame}
 
 \section{Conventions de codage}
+\begin{frame}
+  \frametitle{Tabulations}
+  {\Huge 4 espaces}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Espaces}
+  Opérateurs entourés d'espaces:
+  \begin{lstlisting}[showspaces=true]
+variable = 'valeur'
+ceci == cela
+1 + 2
+  \end{lstlisting}
+  
+Non:
+\begin{lstlisting}[showspaces=true]
+variable='valeur'
+ceci==cela
+1+2
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Espaces}
+  \textbf{Sauf...}
+  
+  \begin{itemize}
+    \item Groupes d'expressions
+    \begin{lstlisting}[showspaces=true]
+a = x*2 - 1
+b = x*x + y*y
+c = (a+b) * (a-b)
+\end{lstlisting}
+    \item "=" dans les arguments d'une fonction
+    \begin{lstlisting}[showspaces=true]
+def fonction(arg='valeur'):
+resultat = fonction(arg='valeur')
+\end{lstlisting}
+    \item parenthèses
+    \begin{lstlisting}[showspaces=true]
+2 * (3 + 4)
+\end{lstlisting}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Noms de variables}
+  Lettres uniquement, en minuscule:
+  \begin{lstlisting}
+for x in range(10):
+    print(x)
+ 
+i = get_index() + 12
+print(ma_liste[i])
+  \end{lstlisting}
+  Underscores autorisés pour : modules, variables, fonctions et méthodes.
+  
+  \bigskip
+  
+  Pour les noms de classes: lettres uniquement, une majuscule par mot:
+  \begin{lstlisting}
+class CeciEstUneClasse:
+    def methodiquement(self):
+        pass
+  \end{lstlisting}
+\end{frame}
 
 
 \section{Conclusion}
 \begin{frame}
-  RTM\\
-  \url{http://www.blender.org/manual/}
+  \begin{itemize}
+    \item RTM\\
+          \url{http://www.blender.org/manual/}
+    \item PEP-8\\
+          http://sametmax.com/le-pep8-en-resume/
+  \end{itemize}
 \end{frame}
 \end{document}
