@@ -19,7 +19,27 @@ Moreover we thought about how to take into acount the altitude of the world. For
 
 \paragraph{Motions of the characters}
 
-The first studies were based on the article .%TODO bibliography
+Simulating to motion of characters seems to be really difficult in Blender, and we did not really anticipate that this would be so difficult. As a result, \vl and \ps are still working on this bibliographical part, even if the rest of the work package moved to the implementation part.
+
+
+\par The first goal of this group was to find out what was already done in Blender concerning automatic walking. All Blender-related ressources on walking animation are gathered on a webpage (\cite{blwikiwalking}). Walk-o-matic and stride add-ons were used in previous versions of Blender to ``help to interactively design rough passes of a walk'' and ``quickly create cycles for background or extra characters'', however both are broken on blender 2.7. Walk-o-matic was still working on 2.67 and parts of its script might be reused.
+
+\par However during the discussions we have decided that realistic motion itself is not our highest priority and we should start with a very basic motion that would not depend on some sophisticated properties of blender as this might make it incompatible with further versions.
+
+\par Thus we have shifted our attention to the basic animations of walk cycles. To begin with we have analysed lots of tutorials for blender character animation. The best detailed one is available on youtube (\cite{tuto_walk}) 
+
+\par A more theoretical survey of Computer animation of Human walking can be found in (\cite{th_walking}), Victor did more research on this topic.
+
+
+\par Now, after learning to create basic animations by hand, we are in the position to start coding: given the set of points we have to interpolate a path passing through them and make our character follow this path while adapting its speed between the points. During the last meeting we found out how to create a path we want.
+
+\par There is a manual for Moving Objects on a Path available on Blender's website (\cite{manual_moving}).
+
+\par There are at least three ways to move objects around, we will probably choose ``The Follow Path Constraint'' as it is the most conventional one, however ``The Clamp To Constraint'' is not yet ruled out.
 
 
 
+
+
+\paragraph{Remaining Work}
+This Work Package is quite finished, and the majority of the group moved from the bibliographical part to the coding part: we have chosen what to implement, we now need to implement it. 
