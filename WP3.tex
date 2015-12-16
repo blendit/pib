@@ -1,32 +1,23 @@
 \section{WP3 - Bibliography on Environment generation}
 \label{WP3}
-The global environment is divided into several types of environments (cities, forests, mountains, ...), we denote by \textbf{feature} a type of environment. Our goal is to allow the user to ``draw'' the different features on a map, and then generate automatically the corresponding 3D environment.
 
-The main architecture comes from \cite{DeclarativeArchitecture}. It is a
-layered architecture, from large-scale features to low-scale ones. Each feature
-covers a user-delimited areas, which may be further reduced because of
-conflicts with the surrounding features. The modularity of the architecture
-allows features to be edited independently of each other. The output may
-include: an height map, a texture map and additional objects to be added on top
-of this such as a water map, vegetation or buildings.
+%% TODO faire une intro au lieu de coemmncer directement ?
+
+We suppose that the global environment is divided into several types of environments (cities, forests, mountains, ...), we denote by \textbf{feature} a type of environment. Our goal is to allow the user to ``draw'' the different features on a map, and then generate automatically the corresponding 3D environment.
+
+The main architecture comes from \cite{DeclarativeArchitecture}. It is a layered architecture, from large-scale features to low-scale ones. Each feature covers a user-delimited area, which may be further reduced because of conflicts with the surrounding features. The modularity of the architecture allows features to be edited independently of each other. The output may include: a height map, a texture map and additional objects to be added on top of this such as: a water map, vegetation or buildings.
 % Interface with the crowd team: summarize as an accessibility map.
 
-The height map is generated using the tree structure described in
-\cite{FeatureTree}. The conversion from the layered architecture amounts to
-choosing the appropriate merging nodes: the leaves are exactly the features of
-the layers. Furthermore, this representation can compute the height at any
-point, allowing a greater level of detail when and where needed.
+The height map is generated using the tree structure described in \cite{FeatureTree}. The conversion from the layered architecture amounts to choosing the appropriate merging nodes: the leaves are exactly the features of the layers. Furthermore, this representation can compute the height of the final map at any point, allowing a greater level of detail when and where needed.
 
 Generating cities is done in three consecutive steps:
 \begin{enumerate}
-  \item Create the road network. This will be done using the method proposed in
-    \cite{StreetTensors}, which seems to support easy edition.
-  \item Divide each block into parcels, following the method given in
-    \cite{PGParcels}.
-  \item Generate a building in each parcel. This can be done either using
-    predefined buildings or procedurally generated using L-systems, as in
-    \cite{FLSystem}.
+\item Create the road network. This will be done using the method proposed in \cite{StreetTensors}, which seems to support easy edition.
+  
+\item Divide each block into parcels, following the method given in \cite{PGParcels}.
+  
+\item Generate a building in each parcel. This can be done either using predefined buildings or procedurally generated using L-systems, as in \cite{FLSystem}.
 \end{enumerate}
 
 
-\paragraph{Remaining Work.} This Work Package is now finished, and the whole group moved from the bibliographical part to the coding part: we have chosen what to implement, we now need to implement it.
+\paragraph{Remaining Work.} The work of this group is now finished, and the whole group moved from the bibliographical part to the coding part: we have chosen what to implement, we now need to implement it.

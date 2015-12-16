@@ -1,45 +1,43 @@
-\section{WP2 - Biliography on Crowd animation}
+\section{WP2 - Bibliography on Crowd animation}
 
-The goal of this workpackage is to find how to simulate large crowds in a rather realistic manner. After a few researches we have noticed that the crowds can be divided into two types: moving crowds and motionless crowd. We have decided focus on moving crowds. 
+The goal of this work package is to find how to simulate large crowds in a rather realistic manner. After a few researches we have noticed that the crowds can be divided into two types: moving crowds and motionless crowd. We have decided focus on moving crowds. 
 
-There are two major difficulities in moving crowds. Firstly we have to generate the path that each person will follow, and then we have to coordination the motions of the moving characters (its foot, arms, ...) with speed of the walk and the calculated path.
+There are two major difficulties in the simulation of moving crowds. Firstly we have to generate the path that each person will follow. Then we have to coordinate the motions of the moving characters (its foots, arms, ...) according to their speed, as well as the calculated path and the slope.
+
 
 \paragraph{Generation of the path}
 
 The strategy used for the crowd simulation is the least-effort approach given in \cite{PLE}.\\
-In this algorithm each individual has an objectiove. The trajectory is optimized by computing the minimum energy cost in between the starting point and the arrival point (the objective). To find this minimum we use Euler's method: each timestep we compute the minimum cost path on a small distance. The ``far'' trajectory is needed for this computation, and so we approximate it using a graph containing the allowed positions on the environment, the ``far''trajectory is just a min-cost path on the graph. By iterating, this method provides us a set of points that describe the path followed by each character.
 
-This algorithm takes into account of the velocity of each character. And the velocities are chosen so that there is no collision between two characters, and between a charactere and the environment.
+In this algorithm each individual has an objective. The trajectory is optimised by computing the minimum energy cost in between the starting point and the arrival point (the objective). To find this minimum we use Euler's method: at each time step we compute the minimum cost path on a small distance. The ``far'' trajectory is needed for this computation, and so we approximate it using a graph containing the allowed positions on the environment, the ``far''trajectory is just a min-cost path on the graph. By iterating, this method provides us a set of points that describe the path followed by each character.
 
-The reachable points on the environnement are described by a level map, and by a set of exclusion polygones. A graph is used, as we said before, to approximate the remaining distances. Its edges are weighted by the distances between two points. Each character can go to different vertices.
+This algorithm takes into account of the velocity of each character. And the velocities are chosen so that there is no collision between two characters, and between a character and the environment.
 
-In order to have an easy way to move large crowd (and not have to set individual objectives to hundreds of people) we decided to allocate to each set of character a set of interest points with a given probability to go to one of them. For the sake of simplicity, we will start with only one goal per charactere.
+The reachable points on the environment are described by a level map, and by a set of polygons excluding some zones. A graph is used, as we said before, to approximate the remaining distances. Its edges are weighted by the distances between two points. Each character can go to different vertices.
 
-Moreover we thought about how to take into acount the altitude of the world. For example, if there is a mountain, it is sometime more efficiant to bypass it. The idea we had for that is to modify the weight of the edges in function of the height of the point. 
+In order to have an easy way to move large crowds (and not have to set individual objectives to hundreds of people) we decided to allocate to each set of characters a set of points of interest with a given probability to go to one of them. For the sake of simplicity, we will start with only one goal per character.
+
+We also thought about how to take into account the altitude of the world. For example, if there is a mountain, it is sometime more efficient to bypass it. The idea we had for that is to modify the weight of the edges in function of the height of the point. 
 
 \paragraph{Motions of the characters}
+\label{WP2_motion}
+Simulating the motion of characters seems to be really difficult in Blender, and we did not really anticipate that this would be so difficult. As a result, \vl and \ps are still finalising the bibliographical part, even if the rest of the work package moved to the implementation part.
 
-Simulating to motion of characters seems to be really difficult in Blender, and we did not really anticipate that this would be so difficult. As a result, \vl and \ps are still working on this bibliographical part, even if the rest of the work package moved to the implementation part.
 
+\par The first goal of this group was to find out what was already done in Blender concerning automatic walking. All Blender-related resources on walking animation are gathered on a web-page (\cite{blwikiwalking}). Walk-o-matic and stride add-ons were used in previous versions of Blender to ``help to interactively design rough passes of a walk'' and ``quickly create cycles for background or extra characters'', however both are broken on Blender 2.7 (we are using Blender 2.76). Walk-o-matic was still working on 2.67 and parts of its script might be reused.
 
-\par The first goal of this group was to find out what was already done in Blender concerning automatic walking. All Blender-related ressources on walking animation are gathered on a webpage (\cite{blwikiwalking}). Walk-o-matic and stride add-ons were used in previous versions of Blender to ``help to interactively design rough passes of a walk'' and ``quickly create cycles for background or extra characters'', however both are broken on blender 2.7. Walk-o-matic was still working on 2.67 and parts of its script might be reused.
+\par A more theoretical survey of Computer animation of Human walking can be found in (\cite{th_walking}), Victor did more research on this topic. However during the discussions we have decided that realistic motion itself is not our highest priority and we should start with a very basic motion that would not depend on some sophisticated properties of blender as this might make it incompatible with further versions.
 
-\par However during the discussions we have decided that realistic motion itself is not our highest priority and we should start with a very basic motion that would not depend on some sophisticated properties of blender as this might make it incompatible with further versions.
-
-\par Thus we have shifted our attention to the basic animations of walk cycles. To begin with we have analysed lots of tutorials for blender character animation. The best detailed one is available on youtube (\cite{tuto_walk}) 
-
-\par A more theoretical survey of Computer animation of Human walking can be found in (\cite{th_walking}), Victor did more research on this topic.
+\par Thus we have shifted our attention to the basic animations of walk cycles. To begin with, we have analysed lots of tutorials for blender character animation. The best detailed one is available on YouTube (\cite{tuto_walk}).
 
 
 \par Now, after learning to create basic animations by hand, we are in the position to start coding: given the set of points we have to interpolate a path passing through them and make our character follow this path while adapting its speed between the points. During the last meeting we found out how to create a path we want.
 
-\par There is a manual for Moving Objects on a Path available on Blender's website (\cite{manual_moving}).
-
-\par There are at least three ways to move objects around, we will probably choose ``The Follow Path Constraint'' as it is the most conventional one, however ``The Clamp To Constraint'' is not yet ruled out.
+\par There is a manual for Moving Objects on a Path available on Blender's website (\cite{manual_moving}). There are at least three ways to move objects around, we will probably choose ``The Follow Path Constraint'' as it is the most conventional one, however ``The Clamp To Constraint'' is not yet ruled out.
 
 
 
 
 
 \paragraph{Remaining Work.}
-This Work Package is quite finished, and the majority of the group moved from the bibliographical part to the coding part: we have chosen what to implement, we now need to implement it. 
+The work of this work package is quite finished, and the majority of the group moved from the bibliographical part to the coding part: we have chosen what to implement, we now need to implement it. 

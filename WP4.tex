@@ -7,27 +7,27 @@
   \item Grid arrangement and setting up of the grid.
   \item Computation of the minimum on a graph with the $A*$ algorithm.
   \item Computation of the authorised velocity field.
-  \item Finding the exclusion zones in order to do the minisation.
+  \item Finding the exclusion zones in order to do the minimisation.
   \item Update of the graph with the attribution of a new weight on the edges: each character affect the weight of its neighbour edges.
 \end{itemize}
 
-\noindent We also started coding the classes that we will use (summarized on Figure \ref{crowd_classes}):
+\noindent We also started coding the classes that we will use (summarised on Figure \ref{crowd_classes}):
 \begin{description}
-  \item[Graph] This class describes the graph that was set up, with a set of nodes and a dictionnary of dictionnaries of edges.
-  \item[Individual] This is the skeleton rigify, includes position, maximal speed, optimal speed, trajectory and some variable to compute the energy.
-  \item [Crowd] contains a set of indivuduals and the graph.
-  \item[Environmen] gives the set of forbidden regions.
-  \item[Blend*] These are the classes using Blender. Thay take the correspondinf ``non-blend'' class and convert it into a Blender object, usable in Blender. 
+  \item[Graph] This class describes the graph that was set up, with a set of nodes and a dictionary of dictionaries of edges.
+  \item[Individual] This is the skeleton rigify, includes position, maximal speed, optimal speed, trajectory and some variable to compute the energy. %% QUESTION
+  \item[Crowd] contains a set of individuals and the graph.
+  \item[Environment] gives the set of forbidden regions.
+  \item[Blend*] These are the classes using Blender. They take the corresponding ``non-blend'' class and convert it into a Blender object, usable in Blender. 
 \end{description}
 
-We also try to keep as much code as possible independant from Blender. It will lead to easier tests and a more portable code from Blender to another 3D software.
+We also try to keep as much code as possible independent from Blender. It will lead to easier tests and a more portable code from Blender to another 3D software.
 
 \begin{figure}[h]
   \includegraphics[width=15cm]{crowd_final.pdf}
-  \caption{Classes of \texttt{crowd} and relations between them.}
+  \caption{Classes of \texttt{crowd plug-in} and relations between them.}
   \label{crowd_classes}
 \end{figure}
 
 \paragraph{Motions of the characters}~
 
-\noindent The biblioraphical work beeing longer that expected, the work one the code for this part has not really started.
+As stated in the paragraph \ref{WP2_motion}, the bibliographical work on the animation of characters was longer than expected and is currently being finalised: the implementation part has yet not begun.
