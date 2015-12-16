@@ -51,31 +51,30 @@
 \maketitle
 
 \begin{abstract}
-This is our mid-year report of the integrated project called ``Blend'it''. The goal of this project is to design two open-source plugins for Blender, which is a computer graphics software. One of these plugin will be able to render and animate crowds, and the other one to design environments by making different elements such as rivers and mountains automatically interact to produce realistic scenes. Although this kind of software is already developped in the Computer Graphics industry, it is often unavailable to the public and not of free use.
+This is our mid-year  report of the integrated project called ``Blend'it''. The goal of this project is to design two open-source plugins for Blender, which is a computer graphics software. One of these plugin will be able to render and animate crowds, and the other one to design environments by making different elements such as rivers and mountains automatically interact to produce realistic scenes. Although this kind of software is already developed in the Computer Graphics industry, it is often unavailable to the public and not of free use.
 \end{abstract}
 
-%% TODO : dire qui est le CHEF.
 
 \tableofcontents
 
 \section{General overview of the project}
 
 \subsection{Objectives}
-The goal of this project is to improve the open-source 3D software Blender. This software can create 3D scenes from scratch, from modelisation to animation and render.
+The goal of this project is to improve the open-source 3D software Blender. This software can create 3D scenes from scratch, from modelling to animation and render.
 
-The aim is to add to blender the feature to generate large populated environments. This is two independents parts: firt generate environments in a semi-automated way. Secondly, generate and animate people of the environment, whose movements must be consistent with the environment and other people's movements.
+The aim is to add to Blender the possibility to generate large populated environments. There are two independents parts: first generate environments in a semi-automated way. Secondly, generate and animate people of the environment, whose movements must be consistent with the environment and other people's movements.
 
-There have been a lot of reaserches around the procedural generation of crowds and environments in computer graphics. But the large majority are implemented as research prototypes or in commercial softwares. As we know, nothing exists for widely used free softwares like Blender.
+There have been a lot of researches around the procedural generation of crowds and environments in computer graphics. But the large majority are implemented as research prototypes or in commercial software. As we know, nothing exists for widely used free software like Blender.
 
-The big advantage of producing a code based on Blender is that we can use its Python API, which is very powerful. With it, one can manipulate evry objects and part of the Blender interface without re-compiling blender or even modifying the source code. thus, we can concentrate only one the new parts of the project: our algorithms, we do no need to code another render engine for example.
-The other advantage is the Blender community, which already exists, and on which we can rely to have feedbacks on our project.
+The big advantage of producing a code based on Blender is that we can use its Python API, which is very powerful. With it, one can manipulate every objects and part of the Blender interface without re-compiling blender or even modifying the source code. thus, we can concentrate only one the new parts of the project: our algorithms, we do not need to code another render engine for example.
+The other advantage is the Blender community, which already exists, and on which we can rely to have feedback on our project.
 
 \subsection{Team and background}
 
 We are 9 Master students from the \textit{École Normale Supérieure de Lyon}, France. As a part of our First year of Master in Research in Computer Science, we need to develop and code a project of our choice (here, ``Blend'it''), during the whole year. We are supervised by an Associate Professor from the ENS Lyon, Eddy Caron. There is a project leader, \me, and a deputy leader, \mr. Please do not hesitate to contact us, by writing an email at \textit{first name . last name @ens-lyon.fr}.
 
 \subsection{Work Packages}
-We decided to create subworking groups, with each group having a separate leader. We detail below the groups, the leader being in bold font.
+We decided to create sub-working groups, with each group having a separate leader. We detail below the groups, the leader being in bold font.
 
 \begin{enumerate}[label=WP\arabic*:, start=0]
 \item Communication: \textbf{\mr}, \me, \js
@@ -89,12 +88,16 @@ We decided to create subworking groups, with each group having a separate leader
 \end{enumerate}
 
 \subsection{Planning}
+
+%% TODO : ajouter le passé du planning?
+Our planning for the following weeks is the following:
+
 \begin{description}
-  \item[17 Dec. - 21 Jan.] \textit{Implementation}. Code the core which is the code independant from Blender. Start the graphical interface.
-  \item[21 Jan. - 4 Feb.] \textit{Blender part}. Code the interface between our classes and Blender objetcs.
-  \item[4 Feb. - 18 Feb.] \textit{Graphical interface}. Improving the graphical interface to make it usable by artists.depending ont the defence..
+  \item[17 Dec. - 21 Jan.] \textit{Implementation}. Code the core which is the code independent from Blender. Start the graphical interface.
+  \item[21 Jan. - 4 Feb.] \textit{Blender part}. Code the interface between our classes and Blender objects.
+  \item[4 Feb. - 18 Feb.] \textit{Graphical interface}. Improving the graphical interface to make it usable by artists. Depending on the defense date..
   \item[18 Feb. - ..] \textit{New features}.
-Use this time to add new features note developped before like:
+Use this time to add new features note developed before like:
   \begin{itemize}
     \item People moving on non-plane surfaces
     \item Improve people animation
