@@ -21,10 +21,30 @@
 \definecolor{mygreen}{rgb}{0,0.6,0}
 \definecolor{mygray}{rgb}{0.5,0.5,0.5}
 \definecolor{mymauve}{rgb}{0.58,0,0.82}
+\usepackage{hyperref}
+\usepackage[usenames,dvipsnames]{xcolor}
+\hypersetup{
+     colorlinks   = true,
+     citecolor    = gray,
+     linkcolor    = blue,
+}
+
+
+\newcommand\bb{Benjamin Boisson}
+\newcommand\gc{Guillaume Combette}
+\newcommand\dl{Dimitri Lajou}
+\newcommand\vl{Victor Lutfalla}
+\newcommand\om{Octave Mariotti}
+\newcommand\mr{Raphaël Monat}
+\newcommand\me{Etienne Moutot} % He is not the only one author o/ Just that \em is already taken
+\newcommand\js{Johanna Seif}
+\newcommand\ps{Pijus Simonaitis}
+
 
 
 \title{Mid-year report, Blend'it project}
-\author{}
+\author{\bb, \gc, \dl,\\ \vl, \om, \mr,\\ \me, \js, \ps}
+
 
 \begin{document}
 
@@ -33,14 +53,33 @@
 \tableofcontents
 
 \section{General overview of the project}
+
 \subsection{Work Packages}
+We decided to create subworking groups, with each group having a separate leader. We detail below the groups, the leader being in bold font.
+
+\begin{enumerate}[label=WP\arabic*:]
+\item Communication: \textbf{\mr}, \me, \js
+\item Blender Code: \mr, \textbf{\me}, \ps
+\item Bibliography on crowd animation: \dl, \vl, \textbf{\js}
+\item Bibliography on environment generation: \bb, \textbf{\gc}, \om
+\item Crowd plugin development: \dl, \vl, \me, \textbf{\js}, \ps
+\item Environment plugin development: \bb, \textbf{\gc}, \om, \mr, \me,
+\item Graphical User Interface (GUI) development: \gc, \textbf{\vl}, \me
+\item Trailer: \dl, \textbf{\me}, \js
+\end{enumerate}
 
 \subsection{Objectives}
 \subsection{Planning}
 
 
+\input{WP0.tex}
+\input{WP1.tex}
 \input{WP2.tex}
 \input{WP3.tex}
+\input{WP4.tex}
+\input{WP5.tex}
+\input{WP6.tex}
+\input{WP7.tex}
 
 \begingroup
 
