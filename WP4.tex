@@ -14,7 +14,7 @@
 \noindent We also started coding the classes that we will use (summarised on Figure \ref{crowd_classes}):
 \begin{description}
   \item[Graph] This class describes the graph that was set up, with a set of nodes and a dictionary of dictionaries of edges.
-  \item[Individual] This is the skeleton rigify, includes position, maximal speed, optimal speed, trajectory and some variable to compute the energy. %% QUESTION
+  \item[Individual] This class describe an individual within the crowd. It includes the position, maximal speed, optimal speed, trajectory and some variables to compute the energy of the individual.
   \item[Crowd] contains a set of individuals and the graph.
   \item[Environment] gives the set of forbidden regions.
   \item[Blend*] These are the classes using Blender. They take the corresponding ``non-blend'' class and convert it into a Blender object, usable in Blender. 
