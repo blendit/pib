@@ -9,7 +9,7 @@ There are two major difficulties in the simulation of moving crowds. Firstly we 
 
 The strategy used for the crowd simulation is the least-effort approach given in \cite{PLE}.\\
 
-In this algorithm each individual has an objective. The trajectory is optimised by computing the minimum energy cost in between the starting point and the arrival point (the objective). To find this minimum we use Euler's method: at each time step we compute the minimum cost path on a small distance. The ``far'' trajectory is needed for this computation, and so we approximate it using a graph containing the allowed positions on the environment, the ``far''trajectory is just a min-cost path on the graph. By iterating, this method provides us a set of points that describe the path followed by each character.
+In this algorithm each individual has an objective. The trajectory is optimised by computing the minimum energy cost in between the starting point and the arrival point (the objective). To find this minimum we use Euler's method: at each time step we compute the minimum cost path on a small distance. The ``far'' trajectory is needed for this computation, and so we approximate it using a graph containing the allowed positions on the environment, the ``far'' trajectory is just a min-cost path on the graph. By iterating, this method provides us a set of points that describe the path followed by each character.
 
 This algorithm takes into account of the velocity of each character. And the velocities are chosen so that there is no collision between two characters, and between a character and the environment.
 
