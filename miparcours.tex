@@ -66,7 +66,51 @@ This is our mid-year  report of the integrated project called ``Blend'it''. The 
 
 \section{General overview of the project}
 
-\subsection{Objectives}
+\subsection{The crowd simulation}
+
+\todoall{(c) wikipedia et vous devez pouvoir faire mieux sans trop de boulot.} 
+
+Crowd simulation is the process of simulating the movement of a large
+number of entities or characters; this technique is now commonly used
+in 3D computer graphics for film. While simulating crowds, observed
+human behavior and interactions are taken into account to replicate
+collective behavior. It is a method of creating virtual
+cinematography.
+
+The need for crowd simulation arises when a scene calls for more
+characters than can be practically animated using conventional
+systems, such as skeletons/bones. Simulating crowds offer the
+advantages of being cost effective as well as allow for total control
+of each simulated character or agent.
+
+Animators typically create a library of motions, either for an entire
+character or for individual body parts. To simplify processing, these
+animations are sometimes baked as morphs. Alternately, the motions can
+be generated procedurally – i.e. choreographed automatically by
+software.
+
+The actual movements and interactions of the crowd are typically
+implemented in one of two ways: Particle Motion or Crowd AI.
+
+
+\subsection{State of the art}
+
+\todoall{Quelques mots sur la concurrence et positionnement par
+  rapport aux outils existants... pour n'en citer que quelques uns: }
+
+\begin{itemize}
+\item Golaem Crowd: \url{http://golaem.com}
+\item Massive \url{http://www.massivesoftware.com/}
+\item Miarmy: \url{http://www.basefount.com/miarmy.html}
+\item M.O.M. Crowd generator:
+  \url{https://www.renderosity.com/mod/bcs/m-o-m-crowd-generator/71815}
+\item Pedestrian Dynamics: \url{http://www.pedestrian-dynamics.com}
+\end{itemize}
+
+
+
+\subsection{The Blend'it Objectives}
+
 The goal of this project is to improve the open-source 3D software Blender, by providing two new plugins. Blender can create 3D scenes from scratch, from modelling to animation and render.
 
 The aim is to add to Blender the possibility to generate large populated environments. There are two independents parts: first generate environments in a semi-automated way. Secondly, generate and animate people of the environment, whose movements must be consistent with the environment and other people's movements. There are some examples of what has been created by some researchers in figures \ref{fig:crowd} and \ref{fig:env}.
@@ -104,9 +148,12 @@ There have been a lot of researches around the procedural generation of crowds a
 The big advantage of producing a code based on Blender is that we can use its Python API, which is very powerful. With it, one can manipulate every objects and part of the Blender interface without re-compiling blender or even modifying the source code. Thus, we can concentrate only one the new parts of the project: our algorithms, we do not need to code another render engine for example.
 The other advantage is the Blender community, which already exists, and on which we can rely to have feedback on our project.
 
+\todoall{Ca serait bien de dire aussi ce que Blend'it n'est pas. Par
+  exemple pas la peine de chercher des considérations sociologique.}
 
-
-\subsection{Team and background}
+\todoall{le paragraphe suivant est à remonter dans la section State of
+the Art quand vous allez expliquer pourquoi Belnd'it est différent de
+tout ce qui existe}
 
 We are 9 Master students from the \textit{École Normale Supérieure de Lyon}, France. As a part of our First year of Master in Research in Computer Science, we need to develop and code a project of our choice (here, ``Blend'it''), during the whole year. We are supervised by an Associate Professor from the ENS Lyon, Eddy Caron. There is a project leader, \me, and a deputy leader, \mr. Please do not hesitate to contact us, by writing an email at \textit{first name . last name @ens-lyon.fr}.\\
 
