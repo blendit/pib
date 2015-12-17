@@ -16,6 +16,7 @@
 \usepackage{amsfonts}
 \usepackage{amssymb}
 \usepackage{color}
+\usepackage{todonotes}
 \usepackage[nounderscore]{syntax}
 \usepackage{graphicx}
 \definecolor{mygreen}{rgb}{0,0.6,0}
@@ -29,6 +30,8 @@
      linkcolor    = blue,
 }
 
+\newcommand{\todoec}[2][]{\todo[inline,color=blue!50,#1]{TODO Eddy: {\bf
+      #2}}}
 
 \newcommand\bb{Benjamin Boisson}
 \newcommand\gc{Guillaume Combette}
