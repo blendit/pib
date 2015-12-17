@@ -1,6 +1,6 @@
 all:
 	pdflatex miparcours.tex
-	bibtex miparcours
+	bibtex miparcours.aux
 	pdflatex miparcours.tex
 
 clean:
