@@ -30,7 +30,9 @@
       linkcolor    = blue,
  }
 
-\newcommand{\todoec}[2][]{\todo[inline,color=blue!50,#1]{TODO Eddy: {\bf
+\newcommand{\todoall}[2][]{\todo[inline,color=blue!50,#1]{TODO All: {\bf
+      #2}}}
+\newcommand{\todovl}[2][]{\todo[inline,color=yellow!50,#1]{TODO Victor: {\bf
       #2}}}
 
 \newcommand\bb{Benjamin Boisson}
@@ -119,6 +121,7 @@ This will be the time to add new features note developed before like:
   \end{itemize}
 \end{description}
 
+\todoall{Ajout du Gantt de la proposal. Si besoin la mettre à jour} 
 
 \input{WP0.tex}
 \input{WP1.tex}
