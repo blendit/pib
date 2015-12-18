@@ -92,24 +92,21 @@ software.
 The actual movements and interactions of the crowd are typically
 implemented in one of two ways: Particle Motion or Crowd AI.
 
-
 \subsection{State of the art}
 
-\todoall{Quelques mots sur la concurrence et positionnement par
-  rapport aux outils existants... pour n'en citer que quelques uns: }
+The animation of large crowds is really developed in the computer graphics industry, enabling commercial 3D software to easily render massive scenes with large crowds. For example, the ILM studio developed a software called Massive (\cite{Massive}) dramatically changed the habits of 3D studios: for example, it helped generating the armies being displayed in \textit{Lord of the Rings}. The Golaem (\cite{Golaem}) software is also able to render massive crowds in different situations, and is used by the studio producing \textit{Game of Thrones}. Nowadays, even commercial standalone 3D software like 3DS MAX\cite{3dsmax} is able to generate realistic crowds. On the contrary, no open-source software provides this kind of feature. In the past, scripts had been developed, but they were not providing realistic results, and are not working anymore.
 
-\begin{itemize}
-\item Golaem Crowd: \url{http://golaem.com}
-\item Massive \url{http://www.massivesoftware.com/}
-\item Miarmy: \url{http://www.basefount.com/miarmy.html}
-\item M.O.M. Crowd generator:
-  \url{https://www.renderosity.com/mod/bcs/m-o-m-crowd-generator/71815}
-\item Pedestrian Dynamics: \url{http://www.pedestrian-dynamics.com}
-\end{itemize}
-
+%% \begin{itemize}
+%% \item Golaem Crowd: \url{http://golaem.com}
+%% \item Massive \url{http://www.massivesoftware.com/}
+%% \item Miarmy: \url{http://www.basefount.com/miarmy.html}
+%% \item M.O.M. Crowd generator:
+%%   \url{https://www.renderosity.com/mod/bcs/m-o-m-crowd-generator/71815}
+%% \item Pedestrian Dynamics: \url{http://www.pedestrian-dynamics.com}
+%% \end{itemize}
 
 
-\subsection{The Blend'it Objectives}
+\subsection{Objectives}
 
 The goal of this project is to improve the open-source 3D software Blender, by providing two new plugins. Blender can create 3D scenes from scratch, from modelling to animation and render.
 
@@ -140,9 +137,6 @@ The aim is to add to Blender the possibility to generate large populated environ
 
 There have been a lot of researches around the procedural generation of crowds and environments in computer graphics. But the large majority are implemented as research prototypes or in commercial software. To the best of our knowledge, nothing exists for widely used free software like Blender.
 
-
-\paragraph{Related work.} The animation of large crowds is really developed in the computer graphics industry, enabling commercial 3D software to easily render massive scenes with large crowds. For example, the ILM studio developed a software called Massive (\cite{Massive}) dramatically changed the habits of 3D studios: for example, it helped generating the armies being displayed in \textit{Lord of the Rings}. The Golaem (\cite{Golaem}) software is also able to render massive crowds in different situations, and is used by the studio producing \textit{Game of Thrones}. Nowadays, even commercial standalone 3D software like 3DS MAX\cite{3dsmax} is able to generate realistic crowds. On the contrary, no open-source software provides this kind of feature. In the past, scripts had been developed, but they were not providing realistic results, and are not working anymore.
-
 \paragraph{Choice of Blender.}
 
 The big advantage of producing a code based on Blender is that we can use its Python API, which is very powerful. With it, one can manipulate every objects and part of the Blender interface without re-compiling blender or even modifying the source code. Thus, we can concentrate only one the new parts of the project: our algorithms, we do not need to code another render engine for example.
@@ -154,6 +148,9 @@ The other advantage is the Blender community, which already exists, and on which
 \todoall{le paragraphe suivant est à remonter dans la section State of
 the Art quand vous allez expliquer pourquoi Belnd'it est différent de
 tout ce qui existe}
+
+\subsection{Team}
+
 
 We are 9 Master students from the \textit{École Normale Supérieure de Lyon}, France. As a part of our First year of Master in Research in Computer Science, we need to develop and code a project of our choice (here, ``Blend'it''), during the whole year. We are supervised by an Associate Professor from the ENS Lyon, Eddy Caron. There is a project leader, \me, and a deputy leader, \mr. Please do not hesitate to contact us, by writing an email at \textit{first name . last name @ens-lyon.fr}.\\
 
