@@ -4,16 +4,12 @@
 
 \noindent The algorithm of least-effort approach is divided in many points.
 \begin{itemize}
-  \item Grid arrangement and setting up of the grid.
-  \item Computation of the minimum on a graph with the $A*$ algorithm.
-  \item Computation of the authorised velocity field.
-  \item Finding the exclusion zones in order to do the minimisation.
-  \item Update of the graph with the attribution of a new weight on the edges: each character affect the weight of its neighbour edges.
+  \item Computing an approxiamation graph to give an indication of the distance remaning to travel to the goal of the individual. We englobe the whole ground zone with a grid of a given mesh to reprensent this graph.
+  \item Finding the exclusion zones that cannot be crossed by the individuals of the crowd. They will be given by a set of polygon that will be projet on the surface where the individual travel.
+  \item Computation of the authorised velocity field that will be collinsion proof. This will be done by an approximation algorithm that will represent the field by an intersection of half-planes.
+  \item Computation of the best velocity to choose by doing minimum on a graph with the $A*$ algorithm to approximate the remaning distance after traveling during dt at this velocity.
+  \item Update of the graph with the attribution of a new weight on the edges: each character affect the weight of its neighbour edges to represent conjection. The way we will do this is still not fixed and will be decided by trying impericactly some ways.
 \end{itemize}
-
-\todoall{C’est dommage de s’arrêter en si bon chemin. Pour chaque
-  itemize une description d’un paraphe pour décrire les efforts et
-  avancés menés ne serait pas un luxe. Par exemple pour chaque point on peut se poser la question du comment ? }
 
 \noindent We also started coding the classes that we will use (summarised on Figure \ref{crowd_classes}):
 \begin{description}
