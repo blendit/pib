@@ -78,6 +78,13 @@ Two crowds implementations are possible: one seeing crowds as set of particles w
 
 The animation of large crowds is really developed in the computer graphics industry, enabling commercial 3D software to easily render massive scenes with large crowds. For example, the ILM studio developed a software called Massive (\cite{Massive}) dramatically changed the habits of 3D studios: for example, it helped generating the armies being displayed in \textit{Lord of the Rings}. The Golaem (\cite{Golaem}) software is also able to render massive crowds in different situations, and is used by the studio producing \textit{Game of Thrones}. Nowadays, even commercial standalone 3D software like 3DS MAX\cite{3dsmax} is able to generate realistic crowds. On the contrary, no open-source software provides this kind of feature. In the past, scripts had been developed, but they were not providing realistic results, and are not working anymore.
 
+\subsection{Team}
+
+We are 9 Master students from the \textit{École Normale Supérieure de Lyon}, France. As a part of our First year of Master in Research in Computer Science, we need to develop and code a project of our choice (here, ``Blend'it''), during the whole year. We are supervised by an Associate Professor from the ENS Lyon, Eddy Caron. There is a project leader, \me, and a deputy leader, \mr. Please do not hesitate to contact us, by writing an email at \textit{first name . last name @ens-lyon.fr}.\\
+
+All our work is hosted on Github, and can be consulted on \url{github.com/blendit}.
+
+
 %% \begin{itemize}
 %% \item Golaem Crowd: \url{http://golaem.com}
 %% \item Massive \url{http://www.massivesoftware.com/}
@@ -110,6 +117,8 @@ The aim is to add to Blender the possibility to generate large populated environ
   \label{fig:crowd}
 \end{figure}
 
+Note that Blend'it does not aim to be a realistic crowd generator, in the sense of a usable simulator for sociological or scientific experiments. The goal is to provide a complete generator for crowd and environment for an artistic purpose only, that \textit{looks like} a realistic crowd.
+
 \begin{figure}[h]
   \includegraphics[width=15cm]{env1.jpg}
   \caption{Image taken from \cite{DeclarativeArchitecture}}
@@ -123,20 +132,6 @@ There have been a lot of researches around the procedural generation of crowds a
 
 The big advantage of producing a code based on Blender is that we can use its Python API, which is very powerful. With it, one can manipulate every objects and part of the Blender interface without re-compiling blender or even modifying the source code. Thus, we can concentrate only one the new parts of the project: our algorithms, we do not need to code another render engine for example.
 The other advantage is the Blender community, which already exists, and on which we can rely to have feedback on our project.
-
-\todoall{Ca serait bien de dire aussi ce que Blend'it n'est pas. Par
-  exemple pas la peine de chercher des considérations sociologique.}
-
-\todoall{le paragraphe suivant est à remonter dans la section State of
-the Art quand vous allez expliquer pourquoi Belnd'it est différent de
-tout ce qui existe}
-
-\subsection{Team}
-
-
-We are 9 Master students from the \textit{École Normale Supérieure de Lyon}, France. As a part of our First year of Master in Research in Computer Science, we need to develop and code a project of our choice (here, ``Blend'it''), during the whole year. We are supervised by an Associate Professor from the ENS Lyon, Eddy Caron. There is a project leader, \me, and a deputy leader, \mr. Please do not hesitate to contact us, by writing an email at \textit{first name . last name @ens-lyon.fr}.\\
-
-All our work is hosted on Github, and can be consulted on \url{github.com/blendit}.
 
 \subsection{Work Packages}
 We decided to create sub-working groups, with each group having a separate leader. We detail below the groups, the leader being in bold font.
