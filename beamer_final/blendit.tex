@@ -5,6 +5,7 @@
 \usepackage{stmaryrd} %http://www.ctan.org/pkg/stmaryrd
 \usepackage{amsmath} %http://www.ctan.org/pkg/amsmath
 \usepackage{amssymb}
+\usepackage{subfig}
 
 \usetheme[usetitleprogressbar, numbering=fraction]{metropolis}
 
@@ -57,11 +58,28 @@
 \end{frame}
 
 \begin{frame}{A Lot of Powerful Software}
-  List of software
+
+% \begin{figure}
+%   \centering
+%   \subfloat[Goalem\label{fig:a}]{\includegraphics[width=5cm]{golaem.jpg}}\qquad
+%   \subfloat[Massive\label{fig:b}]{\includegraphics[width=5cm]{massive.jpg}}
+% \caption{A lot of Powerful Software}
+% \label{fig:1}
+% \end{figure}
+\begin{figure}
+  \includegraphics<1>[width=.95\textwidth]{golaem.jpg}
+  \includegraphics<2>[width=.95\textwidth]{massive.jpg}
+  \caption*{\only<1>{Golaem}\only<2>{Massive}}
+\end{figure}
+
 \end{frame}
 
 \begin{frame}{A Lot of Expensive Software}
-  List of software with prices
+  \begin{itemize}
+    \item Maya3D: 
+    \item Golaem: 650€/month  
+    \item Massive: 3,500\$/year or 16,000\$/year 
+  \end{itemize}
 \end{frame}
 
 \begin{frame}{Why Blender ?}
