@@ -1,7 +1,13 @@
 \documentclass{beamer}
 \usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{stmaryrd} %http://www.ctan.org/pkg/stmaryrd
+\usepackage{amsmath} %http://www.ctan.org/pkg/amsmath
+\usepackage{amssymb}
+\usepackage{subfig}
 
-\usetheme[usetitleprogressbar]{metropolis}
+\usetheme[usetitleprogressbar, numbering=fraction]{metropolis}
 
 \newcommand\bb{Benjamin Boisson}
 \newcommand\gc{Guillaume Combette}
@@ -14,13 +20,25 @@
 \newcommand\ps{Pijus Simonaitis}
 
 
+
+
 \title{Blend'it}
 \subtitle{Integrated project}
 \author{\bb\\ \gc\\ \dl\\ \vl\\ \om\\ \mr\\ \me\\ \js\\ \ps\\}
-\date{15/04/2016}
+\date{April 15th, 2016}
 
 \begin{document}
 \maketitle
+
+\begin{frame}
+\tableofcontents[
+  currentsection,
+  sectionstyle=show/show,
+  subsectionstyle=hide/hide]
+\end{frame}
+
+
+
 
 \bgroup
 \setbeamercolor{background canvas}{bg=black}
@@ -40,11 +58,28 @@
 \end{frame}
 
 \begin{frame}{A Lot of Powerful Software}
-  List of software
+
+% \begin{figure}
+%   \centering
+%   \subfloat[Goalem\label{fig:a}]{\includegraphics[width=5cm]{golaem.jpg}}\qquad
+%   \subfloat[Massive\label{fig:b}]{\includegraphics[width=5cm]{massive.jpg}}
+% \caption{A lot of Powerful Software}
+% \label{fig:1}
+% \end{figure}
+\begin{figure}
+  \includegraphics<1>[width=.95\textwidth]{golaem.jpg}
+  \includegraphics<2>[width=.95\textwidth]{massive.jpg}
+  \caption{\only<1>{Golaem}\only<2>{Massive}}
+\end{figure}
+
 \end{frame}
 
 \begin{frame}{A Lot of Expensive Software}
-  List of software with prices
+  \begin{itemize}
+    \item Maya3D: 
+    \item Golaem: 5000\$/year
+    \item Massive: 3,500 - 16,000\$/year
+  \end{itemize}
 \end{frame}
 
 \begin{frame}{Why Blender ?}
