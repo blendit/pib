@@ -25,6 +25,7 @@
 \newcommand\js{Johanna Seif}
 \newcommand\ps{Pijus Simonaitis}
 
+\definecolor{Cerulean}{HTML}{5974EF}
 
 
 
@@ -146,6 +147,17 @@
 \end{frame}
 
 \begin{frame}{Features}
+  \begin{itemize}
+    \item Forest
+    \item Mountain
+    \item Road
+    \item Cities
+    \item Water (river, lake)
+    \item ...
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Features}
   \begin{figure}
     \begin{center}
       \includegraphics[width=4cm]{feature}
@@ -153,14 +165,35 @@
   \end{figure}
   Feature:
   \begin{itemize}
-    \item 
+    \item {\color{Cerulean}shape}
     \item \texttt{z(x,y)} : height function
     \item \texttt{models} : list of models
   \end{itemize}
 \end{frame}
 
 \begin{frame}{Tree Construction}
-  bla
+  \only<1>{
+  \begin{figure}
+    \begin{center}
+      \includegraphics[width=4cm]{feature_2}
+    \end{center}
+  \end{figure}
+  }
+  
+  \begin{figure}
+    \begin{center}
+      \includegraphics[width=5cm]{mix}
+    \end{center}
+  \end{figure}
+  
+  \only<2>{
+  Depending on features, \texttt{mix(z1, z2)} could be:
+  \begin{description}
+    \item[Blend]:  Mean(z1(), z2())
+    \item[Addition]: z1() + z2()
+    \item[Replace]: Fixed to z1()
+  \end{description}
+  }
 \end{frame}
 
 \begin{frame}{Height Map Generation}
