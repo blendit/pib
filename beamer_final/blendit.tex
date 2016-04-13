@@ -1,11 +1,12 @@
 \documentclass{beamer}
 \usepackage[english]{babel}
-\usepackage[utf8]{inputenc}
+%\usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{stmaryrd} %http://www.ctan.org/pkg/stmaryrd
 \usepackage{amsmath} %http://www.ctan.org/pkg/amsmath
 \usepackage{amssymb}
 \usepackage{subfig}
+\usepackage{hyperref}
 
 \usetheme[usetitleprogressbar, numbering=fraction]{metropolis}
 
@@ -30,14 +31,15 @@
 \date{April 15th, 2016}
 
 \begin{document}
-\maketitle
-
 \begin{frame}
-\tableofcontents[
-  currentsection,
-  sectionstyle=show/show,
-  subsectionstyle=hide/hide]
+\begin{figure}
+  \begin{center}
+    \includegraphics[width=8cm]{logo.pdf}
+  \end{center}
+\end{figure}
 \end{frame}
+
+\maketitle
 
 
 
@@ -61,56 +63,79 @@
 
 \begin{frame}{A Lot of Powerful Software}
 
-% \begin{figure}
-%   \centering
-%   \subfloat[Goalem\label{fig:a}]{\includegraphics[width=5cm]{golaem.jpg}}\qquad
-%   \subfloat[Massive\label{fig:b}]{\includegraphics[width=5cm]{massive.jpg}}
-% \caption{A lot of Powerful Software}
-% \label{fig:1}
-% \end{figure}
+
 \begin{figure}
   \includegraphics<1>[width=.95\textwidth]{golaem.jpg}
   \includegraphics<2>[width=.95\textwidth]{massive.jpg}
-  \caption*{\only<1>{Golaem}\only<2>{Massive}}
+  \includegraphics<3>[width=.95\textwidth]{VUE.jpg}
+  \caption*{\only<1>{Golaem}\only<2>{Massive}\only<3>{VUE}}
 \end{figure}
 
 \end{frame}
 
 \begin{frame}{A Lot of Expensive Software}
   \begin{itemize}
-    \item Maya3D: 
+    \item Maya3D: 1470\$/year
     \item Golaem: 5000\$/year
     \item Massive: 3,500 - 16,000\$/year
+    \item VUE: 1700\$
+    \item Terragen: 600\$
   \end{itemize}
 \end{frame}
 
 \begin{frame}{Why Blender ?}
-  \begin{itemize}
-    \item Strong open-source basis
-    \item Powerful python API (no need to modify the source code of blender)
-  \end{itemize}
+  Complete open-source 3D software: modelisation, animation, render, ...
+    \begin{figure}
+        \includegraphics[width=10cm]{blender_mod}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{Why Blender ?}
+  Powerful python API (no need to modify the source code of blender)
+  \begin{figure}
+        \includegraphics[width=11cm]{blender_script}
+    \end{figure}
 \end{frame}
 
 \begin{frame}{Project organization}
-  Diagram of two subprojects
+  \begin{figure}
+    \begin{center}
+      \includegraphics[width=9cm]{orga.pdf}
+    \end{center}
+  \end{figure}
 \end{frame}
 
-\section{Algorithms}
-\begin{frame}{Crowd animation - }
+
+\section{Crowd Animation}
+\begin{frame}{Crowd Animation - Algorithm}
   bla
 \end{frame}
 
-\begin{frame}{Crowd animation - }
-  bli
+\begin{frame}{Demo}
 \end{frame}
 
-\section{Implementation}
-\begin{frame}{Crowd animation - }
+\section{Environment generation}
+\begin{frame}{Environment Generation - General Layout}
+  \begin{figure}
+    \begin{center}
+      \includegraphics[width=10cm]{env_global.pdf}
+    \end{center}
+  \end{figure}
+\end{frame}
+
+\begin{frame}{Features}
   bla
 \end{frame}
 
-\begin{frame}{Crowd animation - }
-  bli
+\begin{frame}{Height Map Generation}
+  bla
+\end{frame}
+
+\begin{frame}{Tree Construction}
+  bla
+\end{frame}
+
+\begin{frame}{Demo}
 \end{frame}
 
 \bgroup
@@ -118,4 +143,10 @@
 \begin{frame}[plain]{}
 \end{frame}
 \egroup
+
+\begin{frame}{Theme}
+  Used the theme \emph{mtheme} by Matthias Vogelgesang, licensed under a Creative Commons
+  Attribution-ShareAlike 4.0 International License.
+\end{frame}
+
 \end{document}

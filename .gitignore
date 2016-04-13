@@ -70,3 +70,5 @@ target/
 *.vrb
 *.bbl
 *.blg
+
+!beamer_final/img/*.pdf
