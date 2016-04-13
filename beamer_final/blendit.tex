@@ -1,7 +1,12 @@
 \documentclass{beamer}
 \usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{stmaryrd} %http://www.ctan.org/pkg/stmaryrd
+\usepackage{amsmath} %http://www.ctan.org/pkg/amsmath
+\usepackage{amssymb}
 
-\usetheme[usetitleprogressbar]{metropolis}
+\usetheme[usetitleprogressbar, numbering=fraction]{metropolis}
 
 \newcommand\bb{Benjamin Boisson}
 \newcommand\gc{Guillaume Combette}
@@ -14,13 +19,25 @@
 \newcommand\ps{Pijus Simonaitis}
 
 
+
+
 \title{Blend'it}
 \subtitle{Integrated project}
 \author{\bb\\ \gc\\ \dl\\ \vl\\ \om\\ \mr\\ \me\\ \js\\ \ps\\}
-\date{15/04/2016}
+\date{April 15th, 2016}
 
 \begin{document}
 \maketitle
+
+\begin{frame}
+\tableofcontents[
+  currentsection,
+  sectionstyle=show/show,
+  subsectionstyle=hide/hide]
+\end{frame}
+
+
+
 
 \bgroup
 \setbeamercolor{background canvas}{bg=black}
