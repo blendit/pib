@@ -25,6 +25,7 @@
 \newcommand\js{Johanna Seif}
 \newcommand\ps{Pijus Simonaitis}
 
+\definecolor{Cerulean}{HTML}{5974EF}
 
 
 
@@ -44,18 +45,16 @@
 
 \maketitle
 
-
-
+\begin{frame}{Outline}
+  \setbeamertemplate{section in toc}[sections numbered]
+  \tableofcontents[hideallsubsections]
+\end{frame}
 
 \bgroup
 \setbeamercolor{background canvas}{bg=black}
 \begin{frame}[plain]{}
 \end{frame}
 \egroup
-
-\begin{frame}{}
-  Blend'it = Crowd animation and Environment generator (two images from the project).
-\end{frame}
 
 \section{What is Blend'it ?}
 \begin{frame}{What is Blend'it ?}
@@ -78,11 +77,11 @@
 
 \begin{frame}{A Lot of Expensive Software}
   \begin{itemize}
-    \item Maya3D: 1470\$/year
-    \item Golaem: 5000\$/year
-    \item Massive: 3,500 - 16,000\$/year
-    \item VUE: 1700\$
-    \item Terragen: 600\$
+    \item Maya3D: \$1470/year
+    \item Golaem: \$5000/year
+    \item Massive: \$3,500 - \$16,000/year
+    \item VUE: \$1700
+    \item Terragen: \$600
   \end{itemize}
 \end{frame}
 
@@ -113,7 +112,7 @@
 \begin{frame}{Crowd Animation - Algorithm}
 \begin{itemize}
   \item Goal: animation of moving crowds.
-  \item Two issues: path generation, individual movements.
+  \item Two issues: \textbf{path generation}, individual movements.
   % Talk about the fact that after a few of researches, individual movements appeared to be much more difficult that we thought: problem of coordination of foots, arms...
   % That is why all we will talk about is the generation of the path
   \item Strategy: least-effort path.
@@ -124,13 +123,14 @@
   % We decided not to use the graph because of computation time 
 \end{itemize}
 
-\only<1>{
+
+
 \begin{figure}[h!]
   \centering
   \scalebox{.45}{\input{short_path.tex}}
   %\caption{}\label{}
 \end{figure}
-}
+
 
 \only<2>{
 \begin{figure}[h!]
@@ -153,6 +153,9 @@
 \begin{frame}{Demo}
 \end{frame}
 
+\begin{frame}{What is missing}
+\end{frame}
+
 \section{Environment generation}
 \begin{frame}{Environment Generation - General Layout}
   \begin{figure}
@@ -163,18 +166,66 @@
 \end{frame}
 
 \begin{frame}{Features}
-  bla
+  \begin{itemize}
+    \item Forest
+    \item Mountain
+    \item Road
+    \item Cities
+    \item Water (river, lake)
+    \item ...
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Features}
+  \begin{figure}
+    \begin{center}
+      \includegraphics[width=4cm]{feature}
+    \end{center}
+  \end{figure}
+  Feature:
+  \begin{itemize}
+    \item {\color{Cerulean}shape}
+    \item \texttt{z(x,y)} : height function
+    \item \texttt{models} : list of models
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Tree Construction}
+  \only<1>{
+  \begin{figure}
+    \begin{center}
+      \includegraphics[width=4cm]{feature_2}
+    \end{center}
+  \end{figure}
+  }
+  
+  \begin{figure}
+    \begin{center}
+      \includegraphics[width=5cm]{mix}
+    \end{center}
+  \end{figure}
+  
+  \only<2>{
+  Depending on features, \texttt{mix(z1, z2)} could be:
+  \begin{description}
+    \item[Blend]:  Mean(z1(), z2())
+    \item[Addition]: z1() + z2()
+    \item[Replace]: Fixed to z1()
+  \end{description}
+  }
 \end{frame}
 
 \begin{frame}{Height Map Generation}
   bla
 \end{frame}
 
-\begin{frame}{Tree Construction}
-  bla
+\begin{frame}{Demo}
 \end{frame}
 
-\begin{frame}{Demo}
+\begin{frame}{What is missing}
+  \begin{itemize}
+    \item Live modifications
+  \end{itemize}
 \end{frame}
 
 \bgroup
@@ -182,6 +233,11 @@
 \begin{frame}[plain]{}
 \end{frame}
 \egroup
+
+
+\begin{frame}{Bibliography}
+  
+\end{frame}
 
 \begin{frame}{Theme}
   Used the theme \emph{mtheme} by Matthias Vogelgesang, licensed under a Creative Commons
