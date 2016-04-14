@@ -45,22 +45,31 @@
 
 \maketitle
 
-\begin{frame}{Outline}
-  \setbeamertemplate{section in toc}[sections numbered]
-  \tableofcontents[hideallsubsections]
-\end{frame}
-
+% black slide for video
 \bgroup
 \setbeamercolor{background canvas}{bg=black}
 \begin{frame}[plain]{}
 \end{frame}
 \egroup
 
-\section{What is Blend'it ?}
-\begin{frame}{What is Blend'it ?}
-  Blend'it is a \textbf{Blender plug-in} for \textbf{crowd animation} and \textbf{environment generation}.
+\begin{frame}{Outline}
+  \setbeamertemplate{section in toc}[sections numbered]
+  \tableofcontents[hideallsubsections]
+\end{frame}
+
+\section{What is Blend'it?}
+\begin{frame}{What is Blend'it?}
+  Blend'it is a \textbf{Blender plug-in} for \textbf<1>{crowd animation} and \textbf<2>{environment generation}.
   
-  + screenshot
+  \begin{figure}%
+\centering
+\subfloat{\label{fig:first}\includegraphics<1>[height=6cm]{GUI_map_example.png}} ~ 
+\subfloat{\label{fig:second}\includegraphics<1>[height=6cm]{GUI_crowd_example.png}} ~ 
+\subfloat{\label{fig:third}\includegraphics<1>[height=6cm]{GUI_simulation_example.png}}
+\subfloat{\label{fig:third}\includegraphics<2>[height=5cm]{GUI_env.png}}\\
+\label{3figs}
+
+\end{figure}
 \end{frame}
 
 \begin{frame}{A Lot of Powerful Software}
@@ -85,14 +94,14 @@
   \end{itemize}
 \end{frame}
 
-\begin{frame}{Why Blender ?}
+\begin{frame}{Why Blender?}
   Complete open-source 3D software: modelisation, animation, render, ...
     \begin{figure}
         \includegraphics[width=10cm]{blender_mod}
     \end{figure}
 \end{frame}
 
-\begin{frame}{Why Blender ?}
+\begin{frame}{Why Blender?}
   Powerful python API (no need to modify the source code of blender)
   \begin{figure}
         \includegraphics[width=11cm]{blender_script}
@@ -152,21 +161,14 @@
 
 \begin{frame}{Crowd Animation - Algorithm}
 \begin{itemize}
-  \item Easy to implement (distance in a graph, easy computation of the energy)
-  \item Automaton non precise
+  \item Easy to implement (distance in a graph, easy computation of the energy).
+  \item With graph-based approach, movement is not constrained to cells.
+  \item We were more used to graph-based algorithms.
 \end{itemize}
 \end{frame}
 
 \begin{frame}{GUI}
-\begin{figure}%
-\centering
-\subfloat[Map]{\label{fig:first}\includegraphics[height=7cm]{GUI_map_example.png}} ~
-\subfloat[Crowd]{\label{fig:second}\includegraphics[height=7cm]{GUI_crowd_example.png}} ~ 
-\subfloat[Simulation]{\label{fig:third}\includegraphics[height=7cm]{GUI_simulation_example.png}}\\
-%%\caption{ Crowd GUI }
-\label{3figs}
 
-\end{figure}
 
 \end{frame}
 
@@ -232,7 +234,7 @@
   \end{itemize}
 \end{frame}
 
-\begin{frame}{Tree Construction}
+\begin{frame}{Feature Tree}
   \only<1>{
   \begin{figure}
     \begin{center}
@@ -257,16 +259,13 @@
   }
 \end{frame}
 
-\begin{frame}{Height Map Generation}
-  bla
-\end{frame}
-
 \begin{frame}{Demo}
 \end{frame}
 
 \begin{frame}{What is missing}
   \begin{itemize}
     \item Live modifications
+    \item City feature
   \end{itemize}
 \end{frame}
 
@@ -275,6 +274,16 @@
 \begin{frame}[plain]{}
 \end{frame}
 \egroup
+
+\begin{frame}{What is missing}
+\begin{LARGE}
+\begin{center}
+  Thank you for your attention!
+  
+  Any questions?
+    \end{center}
+  \end{LARGE}
+\end{frame}
 
 
 \begin{frame}[allowframebreaks]{Bibliography}
