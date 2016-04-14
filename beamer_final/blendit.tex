@@ -78,8 +78,8 @@
 \begin{figure}
   \includegraphics<1>[width=.95\textwidth]{golaem.jpg}
   \includegraphics<2>[width=.95\textwidth]{massive.jpg}
-  \includegraphics<3>[width=.95\textwidth]{VUE.jpg}
-  \caption*{\only<1>{Golaem}\only<2>{Massive}\only<3>{VUE}}
+  \includegraphics<3>[width=.95\textwidth]{VUE.png}\\
+  \only<1>{Golaem}\only<2>{Massive}\only<3>{VUE}
 \end{figure}
 
 \end{frame}
@@ -179,8 +179,8 @@
   \begin{itemize}
   \item An actual walking animation for the individuals
   \item An efficient graph implementation to find the minimun energy path
-  \item 
-  \item Bla
+  \item A better integration of the environment
+  \item A waypoints option 
   \end{itemize}
 \end{frame}
 
@@ -192,11 +192,7 @@
 
       \includegraphics[height=6cm]{input_map.png}
 
-      \tiny
-      Image from: %TODO: when adding bibliography, replace this with a \cite
-      R.~M. Smelik, T.~Tutenel, K.~J. De~Kraker, and R.~Bidarra. \\
-      A declarative approach to procedural modeling of virtual worlds. \\
-      \emph{Comput. Graph.}, 35(2):352--363, April 2011.
+      \tiny Image extracted from [STdKB11].
     \end{center}
   \end{figure}
 \end{frame}
@@ -307,7 +303,7 @@
 
     %% Crowd
   \bibitem{GCCDLM2010}
-    Guy S. J., Chhugani J., Curtis S., Dubey P., Lin M., Manocha D.
+    Guy S. J., Chhugani J., Curtis S., Dubey P., Lin M., Manocha~D.
     \newblock PLEdestrains: a least-effort approach to crowd simulation
     \newblock \emph{Proceedings of the 2010 ACM SIGGRAPH/Eurographics Symposiom on Computer Animation.} 2010
 
@@ -317,42 +313,37 @@
     \newblock \emph{Proc. Intl. Symposium on Robotics Research.} 2009
 
   \bibitem{MFCD2010}
-    Franck Multon, Laure France, Marie-Paule Cani, Gilles Debunne
+    Multon F., France L., Cani M.-P., Debunne G.
     \newblock Computer Animation of Human Walking: a Survey
     \newblock \emph{Journal of Visualization and Computer Animation,} John Wiley \& Sons, 1999, 10, pp.39-54.
 
 
     %% Env
-  \bibitem{CEWMZ08}
-    Chen G., Esch G., Worka P., Müller P., Zhang E.
-    \newblock Interactive procedural street modeling
-    \newblock \emph{ACM Transactions on Graphics (SIGGRAPH) 27,} 3 (2008), 103:1-103:10
-
-  %% \bibitem{GGPGBGB15}
-  %%   Génevaux J.-D., Galin E., Peytavie A., Guérin E., Briquet C., Grosbellet F., Benes B.
-  %%   \newblock Terrain Modelling from Feature Primitive
-
-  %%  GCC10, MPB05, STdKB11, VKXW12
-
-  \bibitem{MPB05}
-    Marvie J.E., Perret J., Bouatouch K.
-    \newblock The FL-system for procedural geometric modeling
-    \newblock \emph{The Visual Computer}, June 2005, Volume 21, Issue 5, pp329-339
-
-  \bibitem{GPMG10}
-    Galin E., Peytavie A., Maréchal N., Guérin E.
-    \newblock Procedural generation of roads
-    \newblock \emph{Computer Graphics Forum 29,} 2 (2010), 429-438
-
   \bibitem{STdKB11}
     Swelk R. M., Tunetel T., De Kraker K.J., Bidarra R.
     \newblock A declarative approach to procedural modeling of virtual worlds
-    \newblock \emph{ Computers \& Graphics} 35, 2 (2010), 352-363
+    \newblock \emph{Computers \& Graphics} 35, 2 (2010), 352-363
 
-  \bibitem{VKWHAM12}
-    Vanegas C.A., Kelly T., Weber B., Halatsch J., Allaga D., Müller P.
-    \newblock Procedural generation of parcels in urban modeling
-    \newblock \emph{Computer Graphics Forum: Proceedings of Eurographics 2012,} Eurographics Association, 2012
+  \bibitem{GGPGBGB15}
+    Génevaux J.-D., Galin E., Peytavie A., Guérin E., Briquet C., Grosbellet F., Benes B.
+    \newblock Terrain Modelling from Feature Primitive
+
+  \bibitem{CEWMZ08}
+    Chen G., Esch G., Worka P., Müller P., Zhang E.
+    \newblock Interactive procedural street modeling
+    \newblock \emph{ACM Transactions on Graphics (SIGGRAPH) 27}, 3 (2008), 103:1-103:10
+
+% \bibitem{VKWHAM12}
+%   Vanegas C.A., Kelly T., Weber B., Halatsch J., Allaga D., Müller P.
+%   \newblock Procedural generation of parcels in urban modeling
+%   \newblock \emph{Computer Graphics Forum: Proceedings of Eurographics 2012,} Eurographics Association, 2012
+
+% \bibitem{GPMG10}
+%   Galin E., Peytavie A., Maréchal N., Guérin E.
+%   \newblock Procedural generation of roads
+%   \newblock \emph{Computer Graphics Forum 29,} 2 (2010), 429-438
+
+  %%  GCC10, MPB05, STdKB11, VKXW12
 
   \end{thebibliography} 
 \end{frame}
