@@ -118,19 +118,22 @@
 
 
 \section{Crowd Animation}
+
 \begin{frame}{Crowd Animation - Algorithm}
-\begin{itemize}
-  \item Goal: animation of moving crowds.
-  \item Two issues: \textbf{path generation}, individual movements.
-  % Talk about the fact that after a few of researches, individual movements appeared to be much more difficult that we thought: problem of coordination of foots, arms...
-  % That is why all we will talk about is the generation of the path
-  \item Strategy: least-effort path.
-  % TODO tiks drawing to explain the shortest path
-  % We assume that our individuals have an objective and the trajectory is optimised by computing the minimum energy cost between the starting point and the objective.
-  % TODO graph that explains the algorithm to be able to explain it on the drawing. Talk about how we make the graph: one node per individual and grid pattern
-  % Computation of the shortest path thanks to A* algorithm
-  % We decided not to use the graph because of computation time 
-\end{itemize}
+ 	Two approches:
+ \begin{itemize}
+  \item Automaton based algorithms
+  \item Continuous movement
+  \begin{itemize}
+  \item PLEdestrains: a least-effort approach to crowd simulation
+  \item Reciprocal $n$-body collision avoidance
+ \end{itemize}
+ \end{itemize}
+ 
+\end{frame}
+
+\begin{frame}{Crowd Animation - Algorithm}
+
 
 
 \only<1>{
@@ -180,7 +183,6 @@
   \item An actual walking animation for the individuals
   \item An efficient graph implementation to find the minimun energy path
   \item A better integration of the environment
-  \item 
   \end{itemize}
 \end{frame}
 
