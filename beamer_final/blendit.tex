@@ -185,7 +185,7 @@
 \end{frame}
 
 \section{Environment generation}
-\begin{frame}{Environment Generation --- Overview}
+\begin{frame}{Environment Generation - Overview}
   \begin{figure}
     \begin{center}
       Focus on intuitive and user-editable representations
@@ -197,62 +197,62 @@
   \end{figure}
 \end{frame}
 
-\begin{frame}{Environment Generation --- General Layout}
-  \begin{figure}
-    \begin{center}
-      \includegraphics[width=10cm]{env_global.pdf}
-    \end{center}
-  \end{figure}
-\end{frame}
-
-\begin{frame}{Features}
-  \begin{itemize}
-    \item Forest
-    \item Mountain
-    \item Road
-    \item Cities
-    \item Water (river, lake)
-    \item ...
-  \end{itemize}
-\end{frame}
-
 \begin{frame}{Features}
   \begin{figure}
     \begin{center}
       \includegraphics[width=4cm]{feature}
     \end{center}
   \end{figure}
-  Feature:
-  \begin{itemize}
-    \item {\color{Cerulean}shape}
-    \item \texttt{z(x,y)} : height function
-    \item \texttt{models} : list of models
-  \end{itemize}
+
+  \begin{columns}[t]
+    \column{0.5\textwidth}
+    Feature:
+    \begin{itemize}
+      \item {\color{Cerulean}shape}
+      \item \texttt{z(x,y)} : height function
+      \item \texttt{models} : list of models
+    \end{itemize}
+
+    \pause
+    \column{0.4\textwidth}
+    Examples:
+    \begin{itemize}
+      \item Forest
+      \item Mountain
+      \item City
+      \item Water (river, lake)
+    \end{itemize}
+  \end{columns}
 \end{frame}
 
 \begin{frame}{Feature Tree}
-  \only<1>{
+  \begin{columns}[c]
+    \column{0.5\textwidth}
+    \begin{figure}
+      \begin{center}
+        \includegraphics[width=4cm]{feature_2}
+      \end{center}
+    \end{figure}
+
+    \column{0.5\textwidth}
+    \begin{figure}
+      \begin{center}
+        \includegraphics[width=5cm]{mix}
+      \end{center}
+    \end{figure}
+  \end{columns}
+
+  \vfill
+  Depending on features, \texttt{mix(z1, z2)} could be: \\
+  \hspace*{8em} \textbf{Blend}, \textbf{Addition}, \textbf{Replace}
+\end{frame}
+
+\begin{frame}{Environment Generation - General Layout}
   \begin{figure}
     \begin{center}
-      \includegraphics[width=4cm]{feature_2}
+      \includegraphics[width=10cm]{env_global.pdf}
     \end{center}
   \end{figure}
-  }
-  
-  \begin{figure}
-    \begin{center}
-      \includegraphics[width=5cm]{mix}
-    \end{center}
-  \end{figure}
-  
-  \only<2>{
-  Depending on features, \texttt{mix(z1, z2)} could be:
-  \begin{description}
-    \item[Blend]:  Mean(z1(), z2())
-    \item[Addition]: z1() + z2()
-    \item[Replace]: Fixed to z1()
-  \end{description}
-  }
 \end{frame}
 
 \begin{frame}{Demo}
