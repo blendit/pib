@@ -1,0 +1,72 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage{fullpage}
+\usepackage{listingsutf8}
+\usepackage{caption}
+\usepackage{float}
+\usepackage{subcaption}
+\usepackage{amsmath}
+\usepackage{enumitem}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{color}
+\usepackage{todonotes}
+\usepackage[nounderscore]{syntax}
+\usepackage{graphicx}
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+\usepackage[hidelinks]{hyperref}
+
+\newcommand\bb{Benjamin Boisson}
+\newcommand\gc{Guillaume Combette}
+\newcommand\dl{Dimitri Lajou}
+\newcommand\vl{Victor Lutfalla}
+\newcommand\om{Octave Mariotti}
+\newcommand\mr{Raphaël Monat} % Okay, \rm was already taken too.
+\newcommand\me{Etienne Moutot} % He is not the only one author o/ Just that \em is already taken
+\newcommand\js{Johanna Seif}
+\newcommand\ps{Pijus Simonaitis}
+
+
+
+\title{Final report, Blend'it project}
+\author{\bb, \gc, \dl,\\ \vl, \om, \mr,\\ \me, \js, \ps}
+\date{2015-2016}
+
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+\end{abstract}
+
+\newpage
+
+\tableofcontents
+
+\newpage
+
+\input{intro.tex}
+\input{code.tex}
+\input{crowd.tex}
+\input{env.tex}
+\input{conc.tex}
+
+
+\newpage
+\begingroup
+
+\bibliographystyle{alpha}
+\bibliography{final}
+
+\endgroup
+
+\end{document}
