@@ -29,3 +29,30 @@ In the end, this part does return collisions free velocities in 95\% of cases. T
 
 This part involves minimizing a function on the velocity field of each individuals. For that we had two options. The first one was to implement a simplex but the graph was not a linear constraint so we though that this was not a valid way to minimize. The second method was to choose an angle and incrementing it according to a $d\theta$ and minimizing the function on those angles.
 This part is fully functionnal but relied on flotants again involving computional errors.
+
+\subsection{Path generation in Blender}
+
+An algorithm described in the previous paragraphs outputs individual's coordinates at every time step and from these we had to interpolate a continuous path in Blender. 
+
+\subsubsection{Human animation}
+
+\par At the beginning we considered animating Humans and started by analysing a theoretical survey of Computer animation of Human walking (\cite{th_walking}) and looking for what was already done in Blender concerning automatic walking. All Blender-related resources on walking animation are gathered on a web-page (\cite{blwikiwalking}). Walk-o-matic and stride add-ons were used in previous versions of Blender to ``help to interactively design rough passes of a walk'' and ``quickly create cycles for background or extra characters'', however both were broken on Blender 2.7 and we are using Blender 2.76. 
+
+\par Due to the lack of existing tools concerning automatic walking we consider creating such a tool ourselves. We started by analysing tutorials on blender character animation (for examle \cite{tuto_walk}) and creating such a motion manually. However we soon realysed how difficult it is to generate a realistic walk due to the complex physics behind the movements and decided that it is out of the scope of our project and we have shifted our attention to the more basic task of creating a path in Blender and making an object following it with varying speed given by our algorithm
+
+\subsection{Creating a path}
+
+\par There are two ways to make an object move in Blender
+\begin{enumerate}
+\item Fix where an object should be at a given time and then modify the interpolation of the movement to make it realistic.  
+\item Use Blender structures for paths (Bezier curves, NURBS curves) and various ways to couple an object and a path (Follow Path Constraint, Clamp To Constraint).
+\end{enumerate} 
+
+All of these options generate movement, however our work was to find the one that could be automated easily, would be compatible with a data structure given by our algorithm, would be precise and would be easy to modify for the user afterwards. 
+
+The first option was compatible with our data structure however realistic interpolation of the path and possibility to modify a path afterwards posed us a lot of questions and and we have chosen the second option which is a more conventional one, makes a clear distinction between a path and an object following it and is easy to modify for an artist afterwards. 
+
+The main problem to solve was a discrepancy between the data structures: position of an object on the path (Bezier or NURBS) is given through its distance along the path from the starting point while in the data structure given by our algorithm position of the point is accessed through its coordinates. This being said we had to find a way to link a position in the space to the length of the path from the starting point to that position. Blender 2.76 having no add-on to mesure the length of the path made this task more complicated as we had to familiarize with the mathematics behind the interpolation of Bezier curves and NURBS.   
+
+We have chosen Bezier curves instead of NURBS because their mathematical properties allowed us to guarantee that an individual will be at a given place at a given time while NURBS interpolates a path that only comes close to the given points but not necessary passes through them.
+
