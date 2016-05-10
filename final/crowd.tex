@@ -70,11 +70,12 @@ Once we mastered the making and integrating of pannels with simple functionnalit
 
 \subsubsection{The Map Pannel}
 The first pannel we decided to create was one to create the map and grid on which the crowd will evolve.\\
-We created it with three main functionnalities:
+We created it with four main functionnalities:
 \begin{itemize}
 \item save and load the current map
 \item adjust size and origin of the map
 \item adjust grid size (crucial for the algorithm)
+\item add exclusion zones
 \end{itemize}
 
 
@@ -83,10 +84,22 @@ The second pannel provides three of methods to create a crowd
 \begin{itemize}
 \item save and load
 \item initialisation with default settings
-  \item initialisation with randow settings
+\item initialisation with random settings
 \end{itemize}
 
-We also chose to add a personnalisation feature: from an existing crowd (initialized with one of the three methods above) we can select an individual and change all of its settings.
+We also chose to add a personnalisation feature: from an existing crowd (initialized with one of the three methods above) the user can select an individual and change all of its settings: initial position, goal, size, optimal speed, maximal speed and animation of the individual.
 
 
-\subsubsection{The Animation Pannel}
+\subsubsection{The Simulation Pannel}
+The last pannel allows the user to launch the computation of a crowd animation and to render it in Blender.\\
+The user must first set the time quantum, number of time quantum to be computed and angle quantum and then the user can launch computation and load the resulting animation into Blender's 3DVIEW.\\
+There is also a save and load functionality for the animation.
+
+\begin{figure}
+\centering
+\subfloat{\label{fig:first}\includegraphics<2>[height=6cm]{img/GUI_map_example.png}} ~ 
+\subfloat{\label{fig:second}\includegraphics<2>[height=6cm]{img/GUI_crowd_example.png}} ~ 
+\subfloat{\label{fig:third}\includegraphics<2>[height=6cm]{img/GUI_simulation_example.png}}
+\label{3figs}
+
+\end{figure}
