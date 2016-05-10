@@ -57,4 +57,36 @@ The main problem to solve was a discrepancy between the data structures: positio
 We have chosen Bezier curves instead of NURBS because their mathematical properties allowed us to guarantee that an individual will be at a given place at a given time while NURBS interpolates a path that only comes close to the given points but not necessary passes through them.
 
 \subsection{GUI}
-The approach we chose was to have a GUI that would be integrated in in the Blender GUI.
+The approach we chose was to have a GUI that would be integrated in the Blender GUI.\\
+There where many layers of GUI in Blender:
+\begin{itemize}
+\item window
+\item banner
+\item pannel
+\end{itemize}
+
+We chose to make pannels for simplicity reasons and we put those in the right banner of the 3DVIEW window.\\
+Once we mastered the making and integrating of pannels with simple functionnalities in Blender we started to separate the functionnalities we wanted for the GUI of the crowd plug-in.
+
+\subsubsection{The Map Pannel}
+The first pannel we decided to create was one to create the map and grid on which the crowd will evolve.\\
+We created it with three main functionnalities:
+\begin{itemize}
+\item save and load the current map
+\item adjust size and origin of the map
+\item adjust grid size (crucial for the algorithm)
+\end{itemize}
+
+
+\subsubsection{The Parameters Pannel}
+The second pannel provides three of methods to create a crowd 
+\begin{itemize}
+\item save and load
+\item initialisation with default settings
+  \item initialisation with randow settings
+\end{itemize}
+
+We also chose to add a personnalisation feature: from an existing crowd (initialized with one of the three methods above) we can select an individual and change all of its settings.
+
+
+\subsubsection{The Animation Pannel}
