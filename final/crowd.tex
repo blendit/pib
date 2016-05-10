@@ -7,7 +7,7 @@ The first part create a set of key points that will represent the movement of on
 % Il faudra changer les titres je pense 
 \subsection{Algorithm description}
 
-The first algorithm is inspired by those two papers: \cite{PLE} and \cite{vandenBerg2011}. We choosed them because the notions involved in the describtion of the algorithm were more familiar to us.
+The first algorithm is inspired by those two papers: \cite{PLE} and \cite{vandenBerg2011}. We chose them because the notions involved in the describtion of the algorithm were more familiar to us.
 % TODO : combler avec du bla bla
 The idea is the following: a graph (grid) algorithm will generate a general path that for each individual and another algorithm will prevent collisions between individuals. We descretize the time in order to compute a next point for each individual easily. This is how we get the final set of points for each individuals.
 
@@ -56,3 +56,5 @@ The main problem to solve was a discrepancy between the data structures: positio
 
 We have chosen Bezier curves instead of NURBS because their mathematical properties allowed us to guarantee that an individual will be at a given place at a given time while NURBS interpolates a path that only comes close to the given points but not necessary passes through them.
 
+\subsection{GUI}
+The approach we chose was to have a GUI that would be integrated in in the Blender GUI.
