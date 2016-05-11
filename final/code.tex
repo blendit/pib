@@ -1,9 +1,11 @@
 \section{Blender exploration team}
 
-During the whole project, this team had two aims: discover Blender and
-Python while other teams focused in the bibliographical work, and
-ensure our code was healthy by setting up unitary tests and code
-coverage tools.
+During the whole project, this team had two aims. Our first goal was
+to discover Blender and Python while other teams focused on the
+bibliographical work, to then teach everyone how to use Blender
+efficiently and code in Python. Our second goal was to guarantee the
+quality of our code by setting up unitary tests and code coverage
+tools.
 
 \subsection{Blender discovery}
 
@@ -13,7 +15,17 @@ is also able to show the Python source of its interface, or give the
 Python command associated to a manual operation. These features were
 really helpful to develop efficiently our programs.
 
+
 \subsection{Unitary tests}
 
+For each new class we implemented, we also created a unit test
+file. The execution was handled by the unitary test library of
+Python. We also linked our Github repositories with Travis, a website
+that runs the unitary test every time a pull request is created.
 
 \subsection{Code coverage}
+
+We also linked our Github repositories with Coveralls, to see what
+part of the code was covered by our unitary tests. To ensure a good
+coverage, the pull requests had to increase coverage, or they would
+automatically be rejected.
