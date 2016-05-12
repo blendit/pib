@@ -103,6 +103,20 @@ places anymore and just went strait to there goal, same as for obstacles,
 packed places were taken into account by the edges of the graph which weigth
 depended on the crowdedness of the neighbour cells.
 
+\begin{figure}[h!]
+  \centering
+  \begin{subfigure}[t]{0.45\textwidth}
+    \scalebox{.4}{\input{img/short_path.tex}}
+    \caption{A setting in a crowd animation}
+  \end{subfigure} % ~
+  \begin{subfigure}[t]{0.45\textwidth}
+    \scalebox{.4}{\input{img/short_path_grid.tex}}
+    \caption{The graph-based version}
+  \end{subfigure}
+  \caption{The idea of the graph}
+\end{figure}
+
+
 \paragraph{Allowed velocity field}
 
 This part deals with collision avoidance. This part is the part that
@@ -110,9 +124,10 @@ took us the more time to implement. The problem is the following, you
 have a set of individual (i.e. points) with current velocities. You
 want for each individual a set of velocities that will ensure that if
 we pick one in it then we will not collide with another individual on
-the way. To do that the algorithm makes a lot of geometrical
-computation as explained in \cite{vandenBerg2011}. We used the Python
-library Shapely to represent geometrical structures.
+the way (see Fig.~\ref{fig:avf} for an example). To do that the algorithm
+makes a lot of geometrical computation as explained in
+\cite{vandenBerg2011}. We used the Python library Shapely to represent
+geometrical structures.
 
 %% WHat kind of errors ?
 This library has some very useful tools but some functionalities did
@@ -135,19 +150,9 @@ some bugs that we were not able to fix.  %% Figure du beamer ?
 
 \begin{figure}[h!]
   \centering
-  \begin{subfigure}[t]{0.45\textwidth}
-    \scalebox{.4}{\input{img/short_path.tex}}
-  \end{subfigure} % ~
-  \begin{subfigure}[t]{0.45\textwidth}
-  \scalebox{.4}{\input{img/short_path_grid.tex}}
-  \end{subfigure}
-  \caption{TODO}
-\end{figure}
-
-\begin{figure}[h!]
-  \centering
   \scalebox{.475}{\input{img/vector.tex}}
   \caption{Allowed velocity field}
+  \label{fig:avf}
 \end{figure}
 
 
