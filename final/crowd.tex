@@ -45,17 +45,23 @@ task of creating a path in Blender and making an object following it
 with varying speed given by our algorithm.
 
 
-% Il faudra changer les titres je pense
+% Il faudra changer les titres je pense %% bon il faut peut être encore les changer
 \subsection{Path generation}
 
 The first algorithm is inspired by those two papers: \cite{PLE} and
-\cite{vandenBerg2011}. We chose them because the notions involved in
-the description of the algorithm were more familiar to us.  % TODO :
-combler avec du bla bla The idea is the following: a graph (grid)
-algorithm will generate a general path for each individual and another
-algorithm will prevent collisions between individuals. \\ Time is
-discretized, and for each time, we compute the direction to go for
-each individual. We move the in this direction, and iterate this
+\cite{vandenBerg2011}. We chose them because it relied on graphs
+rather than cellular automaton, and we were more familiar with
+graphs. We also thought this approach would be more precise.
+
+% TODO :combler avec du bla bla
+
+The idea is the following: a graph (grid) algorithm will generate a
+general path for each individual and another algorithm will prevent
+collisions between individuals.
+
+
+Time is discretized, and for each time, we compute the direction to go
+for each individual. We move the in this direction, and iterate this
 principle. This is how we get the final set of points for each
 individuals.
 
@@ -108,6 +114,25 @@ closer to the limits of the obstacle until they cross it through
 errors and thus go through obstacles.  In the end, this part does
 return collisions free velocities in 95\% of cases. There are still
 some bugs that we were not able to fix.  %% Figure du beamer ?
+
+
+\begin{figure}[h!]
+  \centering
+  \begin{subfigure}[t]{0.45\textwidth}
+    \scalebox{.4}{\input{img/short_path.tex}}
+  \end{subfigure} % ~
+  \begin{subfigure}[t]{0.45\textwidth}
+  \scalebox{.4}{\input{img/short_path_grid.tex}}
+  \end{subfigure}
+  \caption{TODO}
+\end{figure}
+
+\begin{figure}[h!]
+  \centering
+  \scalebox{.475}{\input{img/vector.tex}}
+  \caption{TODO}
+\end{figure}
+
 
 
 \paragraph{Computation of the allowed movement}
