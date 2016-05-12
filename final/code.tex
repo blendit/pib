@@ -23,9 +23,24 @@ file. The execution was handled by the unitary test library of
 Python. We linked our Github repositories with Travis, a website
 that runs the unitary test every time a pull request is created.
 
+The advantage of creating these tests is that it forced us to test deeply our code, and more important, to notice when code notification break some other parts of the code. This last feature is really important for big projects, to avoid missing bugs when modifying the code.
+
 \subsection{Code coverage}
 
 We also linked our Github repositories with Coveralls, to see what
 part of the code was covered by our unitary tests. To ensure a good
 coverage, the pull requests had to increase coverage, or they would
 automatically be rejected.
+
+\subsection{Code organization}
+This team also organized globally the code of the project. The code of each plug-in is separated into two parts: one independent from blender, containing the \textit{core}: main algorithms and data structures. And a second one, which implements the blender integration.\\
+The advantage of this organization is that the first part can be tested automatically using unit tests. the part using blender cannot be tested automatically with Travis, because it needs a lot of interaction with the graphical interface. 
+Thus, we tried to put maximum of the complex algorithm in the first part, to allow them to be tested deeply.
+
+\begin{figure}[h]
+  \begin{center}
+    \includegraphics[width=7cm]{img/orga.pdf}
+    \caption{Code organization}
+    \label{fig:code}
+  \end{center}
+\end{figure}

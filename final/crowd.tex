@@ -1,23 +1,33 @@
 \section{Crowd plug-in}
 
-The goal of this work package was to implement an efficient and realistic motion of a crowd. At first we wanted to implement a general movement algorithm and another algorithm that would control the animation of the crowd. The second part was quite difficult to implement and thus we decided to concentrate ourselves on the first part.\\
-Our code is split into two parts: one that is independent from Blender and one that depends on it. \\
+The goal of this work package was to implement an efficient and realistic motion of a crowd. \\
+The initial goal was to implement two parts: one creating trajectories for the crowd and another one for animating individual movements. The second part was really hard to implement and had a lot of relation with animation of models, in which we don't know anything. Thus we decided to concentrate ourselves on the first part.\\
+Our code is split into two parts: one that is independent from Blender and one that depends on it (see figure \ref{fig:code}). \\
 The first part create a set of key points that will represent the movement of one person and the second interpolate a trajectory from those points.
+
+
+\subsubsection{Human animation}
+
+At the beginning we considered animating Humans and started by analyzing a theoretical survey of Computer animation of Human walking (\cite{th_walking}) and looking for what was already done in Blender concerning automatic walking. All Blender-related resources on walking animation are gathered on a web-page (\cite{blwikiwalking}). Walk-o-matic and stride add-ons were used in previous versions of Blender to ``help to interactively design rough passes of a walk'' and ``quickly create cycles for background or extra characters'', however both were broken on Blender 2.7 and we are using Blender 2.76. 
+
+Due to the lack of existing tools concerning automatic walking we considered creating such a tool ourselves. We started by analyzing tutorials on blender character animation (for example \cite{tuto_walk}) and creating such a motion manually. However we soon realized how difficult it is to generate a realistic walk due to the complex physics behind the movements and decided that it is out of the scope of our project. We have shifted our attention to the more basic task of creating a path in Blender and making an object following it with varying speed given by our algorithm.
+
 
 % Il faudra changer les titres je pense 
 \subsection{Algorithm description}
 
-The first algorithm is inspired by those two papers: \cite{PLE} and \cite{vandenBerg2011}. We chose them because the notions involved in the describtion of the algorithm were more familiar to us.
+The first algorithm is inspired by those two papers: \cite{PLE} and \cite{vandenBerg2011}. We chose them because the notions involved in the description of the algorithm were more familiar to us.
 % TODO : combler avec du bla bla
-The idea is the following: a graph (grid) algorithm will generate a general path that for each individual and another algorithm will prevent collisions between individuals. We discretize the time in order to compute a next point for each individual easily. This is how we get the final set of points for each individuals.
+The idea is the following: a graph (grid) algorithm will generate a general path for each individual and another algorithm will prevent collisions between individuals. \\
+Time is discretized, and for each time, we compute the direction to go for each individual. We move the in this direction, and iterate this principle. This is how we get the final set of points for each individuals.
 
 
 \subsection{Algorithm implementation}
 
 \subsubsection{The guide graph}
 
-The first part that we tried to implement was the graph. We created a data structure representing the nodes of the graph and the edges. This was quite easy to do since the graph is supposed to be a grid, it is regular.
-Then we needed a minimum distance (1 to 1) algorithm on the graph. For that we choosed the $A^*$ algorithm. Unfortunately, our implementation of the $A^*$ was really costly in time and even more in memory. This fact forced us to abandon the graph in the rest of the development. We could test it for small values, and for a small number of calls, but the $A^*$ procedure would have to be called thousands of times which makes this impractical. 
+The first part that we tried to implement was the data structure of the graph. We created a data structure representing the nodes of the graph and the edges. This was quite easy to do since the graph is supposed to be a grid, it is regular.
+Then we needed a minimum distance (1 to 1) algorithm on the graph. For that we chose the $A^*$ algorithm. Unfortunately, our implementation of the $A^*$ was really costly in time and even more in memory. This fact forced us to abandon the graph in the rest of the development. We could test it for small values, and for a small number of calls, but the $A^*$ procedure would have to be called thousands of times which makes this impractical. 
 To replace the graph we used the euclidean distance, this involved removing statics obstacles. Also the points were no more able to avoid packed places and just went strait to there goal.
 
 \subsubsection{Allowed velocity field}
@@ -40,24 +50,18 @@ This part involves minimizing a function on the velocity field of each individua
 %% Quelle fonction ?
 This part is fully functional but relied on floating-point numbers again, involving computational errors.
 
+
 \subsection{Path generation in Blender}
 
-An algorithm described in the previous paragraphs outputs individual's coordinates at every time step and from these we had to interpolate a continuous path in Blender. 
+The algorithm described in the previous paragraphs outputs individual's coordinates at every time step and from these we have to interpolate a continuous path in Blender. 
 
-\subsubsection{Human animation}
 
-At the beginning we considered animating Humans and started by analyzing a theoretical survey of Computer animation of Human walking (\cite{th_walking}) and looking for what was already done in Blender concerning automatic walking. All Blender-related resources on walking animation are gathered on a web-page (\cite{blwikiwalking}). Walk-o-matic and stride add-ons were used in previous versions of Blender to ``help to interactively design rough passes of a walk'' and ``quickly create cycles for background or extra characters'', however both were broken on Blender 2.7 and we are using Blender 2.76. 
-
-Due to the lack of existing tools concerning automatic walking we considered creating such a tool ourselves. We started by analyzing tutorials on blender character animation (for example \cite{tuto_walk}) and creating such a motion manually. However we soon realized how difficult it is to generate a realistic walk due to the complex physics behind the movements and decided that it is out of the scope of our project. We have shifted our attention to the more basic task of creating a path in Blender and making an object following it with varying speed given by our algorithm.
-
-\subsection{Creating a path}
+\subsubsection{Creating a path}
 
 There are two ways to make an object move in Blender
 \begin{enumerate}
 \item Fix where an object should be at a given time and then modify the interpolation of the movement to make it realistic.  
-\item Use Blender structures for paths (Bezier curves, NURBS curves) and various ways to couple an object and a path (Follow Path Constraint, Clamp To Constraint).
-%% Nurbs ?
-%% Follow path, clamp to constraint c'est quoi ?
+\item Use Blender structures for paths (Bezier curves, NURBS curves) and various ways to couple an object and a path (\textit{Follow Path} Constraint, \textit{Clamp To} Constraint).
 \end{enumerate} 
 
 All of these options generate movement, however our work was to find the one that could be automated easily, that would be compatible with a data structure given by our algorithm, that would be precise and easy to modify for the user afterwards. 
@@ -99,7 +103,7 @@ The second panel provides three of methods to create a crowd
 \item initialisation with random settings
 \end{itemize}
 
-We also chose to add a personnalisation feature: from an existing crowd (initialized with one of the three methods above) the user can select an individual and change all of its settings: initial position, goal, size, optimal speed, maximal speed and animation of the individual.
+We also chose to add a personalization feature: from an existing crowd (initialized with one of the three methods above) the user can select an individual and change all of its settings: initial position, goal, size, optimal speed, maximal speed and animation of the individual.
 
 
 \subsubsection{The Simulation Panel}
@@ -107,11 +111,9 @@ The last panel allows the user to launch the computation of a crowd animation an
 The user must first set the time quantum, number of time quantum to be computed and angle quantum and then the user can launch computation and load the resulting animation into Blender's 3DVIEW.\\
 There is also a save and load functionality for the animation.
 
-%\begin{figure}
-%  \centering
-%\subfloat{\label{fig:first}\includegraphics<2>[height=6cm]{img/GUI_map_example.png}} ~ 
-%\subfloat{\label{fig:second}\includegraphics<2>[height=6cm]{img/GUI_crowd_example.png}} ~ 
-%\subfloat{\label{fig:third}\includegraphics<2>[height=6cm]{img/GUI_simulation_example.png}}
-%\label{3figs}
-
-%\end{figure}
+\begin{figure}
+  \centering
+\includegraphics[height=10cm]{img/GUI_map_example.png} ~ 
+\includegraphics[height=10cm]{img/GUI_crowd_example.png} ~ 
+\includegraphics[height=10cm]{img/GUI_simulation_example.png}
+\end{figure}
