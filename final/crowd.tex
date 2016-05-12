@@ -1,13 +1,9 @@
 \section{Crowd plug-in}
 
-<<<<<<< HEAD
-The goal of this work package was to implement the movement of the crowd and to integrate our work into Blender. At first we wanted to implement a general movement algorithm and an other algorithm that would control the animation of the crowd. The second part was quite difficult to implement and thus we decided to concentrate ourselves on the first part.\\
+
+The goal of this work package was to implement and integrate into Blender an efficient and realistic motion of a crowd . At first we wanted to implement a general movement algorithm and an other algorithm that would control the animation of the crowd. The second part was quite difficult to implement and thus we decided to concentrate ourselves on the first part.\\
 Our algorithm is split into two parts one that is independant from Blender and one that depends on it. \\
 The first part creates a set of key points that will represent the movement of one person and the second interpolate a trajectory from those points.
-=======
-The goal of this work package was to implement an efficient and
-realistic motion of a crowd.
->>>>>>> 4f41ee95d01b1a608dfa33e3a8b1e6ddab4b1b73
 
 
 The initial goal was to implement two parts: one creating trajectories
@@ -20,24 +16,21 @@ expertise. We thus decided to focus on the first part.
 Our code is split into two parts: one that is independent from Blender
 and one that depends on it (see figure \ref{fig:code}).
 
-<<<<<<< HEAD
+
 The first part that we tried to implement was the graph. We created a data structure reprensenting the nodes of the graph and the edges. This was quite easy to do since the graph is suposed to be a grid, it is regular.\\
-Then we needed a minimum distance (1 to 1) algorithm on the graph. For that we choosed the $A^*$ algorithm. Unfortunaly, our implementation of the $A^*$ was realy costly in time and even more in memory. This fact forced us to abandon the graph in the rest of the devellopement. We could test it for small values, and for a small number of calls, but the $A^*$ would have to be called thousands of times which makes this impractical.\\ 
-To replace the graph we used the euclidian distance, this involved removing statics obstacles. Also the points were no more able to avoid packed places and just went strait to there goal.
-=======
->>>>>>> 4f41ee95d01b1a608dfa33e3a8b1e6ddab4b1b73
+Then we needed a minimum distance (1 to 1) algorithm on the graph. For that we chose the $A^*$ algorithm. Unfortunaly, our implementation of the $A^*$ was realy costly in time and even more in memory. This fact forced us to abandon the graph in the rest of the devellopement. We could test it for small values, and for a small number of calls, but the $A^*$ would have to be called thousands of times which makes this impractical.\\ 
+To replace the graph we used the euclidian distance, this involved removing statics obstacles. Also the points were no more able to avoid packed places and just went strait to their goal.
+
 
 The first part create a set of key points that will represent the
 movement of one person and the second interpolate a trajectory from
 those points. Before presenting these two parts, we explain the
 difficulties encountered when we tried to model human animation.
 
-<<<<<<< HEAD
+
 This part deals with collision avoidance. This part is the part that took us the more time to implement. The problem is the following, you have a set of individual (i.e. points) with current velocities. You want for each individuals a set of velocities that will ensure that if we pick one in it then we will not colide with another individual on the way. To do that the algorithm makes a lot of geometrical computation as you can see in \cite{vandenBerg2011}. We used the python library Shapely to reprensent geometrical structures. This library has some very usefull tools but some functionalities do not work very well with the flotants and the small errors that they provied. The errors linked to the flotant are one of the main reason it took us time. The other was that some geometrical forms were hard to reprensent and to compute both theoriticaly and computationaly.\\
 Also due to the absence of the guide graph, the individuals were not able to go around obstables so it induced bugs, the points tends to get closer and closer to the limits of the obstacle until they cross it through errors and thus go through obstacles.
 In the end, this part does return collisions free velocities in 95\% of cases. There are still some bugs that we were not able to find.
-=======
->>>>>>> 4f41ee95d01b1a608dfa33e3a8b1e6ddab4b1b73
 
 \subsection{Human animation}
 
