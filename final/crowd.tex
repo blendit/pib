@@ -93,15 +93,14 @@ costly in time and even more in memory. This fact forced us to abandon
 the graph in the rest of the development. We could test it for small
 values, and for a small number of calls, but the $A^*$ procedure would
 have to be called thousands of times which makes this impractical.  To
-replace the graph we used the euclidean distance, this involved
-removing static obstacles, indeed these obstacles were taken into
+replace the graph we used the euclidean distance, but we had to remove
+ static obstacles. Indeed these obstacles were taken into
 account in the graph (no vertices inside an obstacle) and impacted the
 shortest path algorithm $A^*$ but euclidean distance cannot take into
-account such obstacles.%(\textcolor{red}{TODO: pourquoi?}).
-Also thepoints (representing people) were not able to avoid packed
+account such obstacles.
+Also the points (representing people) were not able to avoid packed
 places anymore and just went strait to there goal, same as for obstacles,
-packed places
-were taken into account by the edges of the graph which weigth
+packed places were taken into account by the edges of the graph which weigth
 depended on the crowdedness of the neighbour cells.
 
 \paragraph{Allowed velocity field}
@@ -148,7 +147,7 @@ some bugs that we were not able to fix.  %% Figure du beamer ?
 \begin{figure}[h!]
   \centering
   \scalebox{.475}{\input{img/vector.tex}}
-  \caption{TODO}
+  \caption{Allowed velocity field}
 \end{figure}
 
 
@@ -156,17 +155,18 @@ some bugs that we were not able to fix.  %% Figure du beamer ?
 \paragraph{Computation of the allowed movement}
 
 This part involves minimizing a function on the velocity field of each
-individuals. For that we had two options. The first one was to
-implement a simplex but the graph was not a linear constraint so we
-thought that this was not a valid way to minimize.
- %% Lien avec le graphe ? 
+individuals: each individual will choose a movement minimizing the
+energy used to get to his/her goal. For that we had two options. The
+first one was to implement a simplex algorithm but the graph did not
+yield linear constraints so this was not a valid way to minimize our
+function.
 
 The second method was to choose an angle and increment it according to
-a $d\theta$ and minimizing the objective function (either a graph-based
-distance or the euclidean distance) on those angles. 
+a $d\theta$ and minimizing the objective function (either a
+graph-based distance or the euclidean distance, corresponding the
+energy used) on those angles.
 
 %% Quelle fonction ?  
-
 This part is fully functional but relied on floating-point numbers
 again, involving computational errors.
 
