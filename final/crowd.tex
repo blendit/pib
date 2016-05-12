@@ -94,9 +94,15 @@ the graph in the rest of the development. We could test it for small
 values, and for a small number of calls, but the $A^*$ procedure would
 have to be called thousands of times which makes this impractical.  To
 replace the graph we used the euclidean distance, this involved
-removing static obstacles (\textcolor{red}{TODO: pourquoi?}). Also the
-points (representing people) were not  able to avoid packed places
-anymore and just went strait to there goal.
+removing static obstacles, indeed these obstacles were taken into
+account in the graph (no vertices inside an obstacle) and impacted the
+shortest path algorithm $A^*$ but euclidean distance cannot take into
+account such obstacles.%(\textcolor{red}{TODO: pourquoi?}).
+Also thepoints (representing people) were not able to avoid packed
+places anymore and just went strait to there goal, same as for obstacles,
+packed places
+were taken into account by the edges of the graph which weigth
+depended on the crowdedness of the neighbour cells.
 
 \paragraph{Allowed velocity field}
 
@@ -116,6 +122,7 @@ approximations that they entail. The errors linked to the floats are
 one of the main reason it took us time. 
 
 %% Il y a pas eu plein d'implém manuelle plutôt que shapely dans cette partie ?...
+%% Tous les polygones et tous les points sont des shapely._
 
 The other was that some geometrical forms were hard to represent and
 to compute both theoretically and computationally.  Also due to the
@@ -155,7 +162,8 @@ thought that this was not a valid way to minimize.
  %% Lien avec le graphe ? 
 
 The second method was to choose an angle and increment it according to
-a $d\theta$ and minimizing the function on those angles.
+a $d\theta$ and minimizing the objective function (either a graph-based
+distance or the euclidean distance) on those angles. 
 
 %% Quelle fonction ?  
 
@@ -197,8 +205,9 @@ The main problem to solve was a discrepancy between the data
 structures: position of an object on the path (Bezier or NURBS) is
 given through its distance along the path from the starting point
 while in the data structure given by our algorithm position of the
-point is accessed through its coordinates \textcolor{red}{(ça ça
-montre pas un manque de coordination???)}. This being said we
+point is accessed through its coordinates. \textcolor{red}{(ça ça
+  montre pas un manque de coordination???)}
+This being said we
 had to find a way to link a position in the space to the length of the
 path from the starting point to that position. Blender 2.76 having no
 add-on to measure the length of the path made this task more
@@ -214,10 +223,10 @@ passes through them.
 \subsection{GUI} 
 
 
-The approach we chose was to have a GUI that would be integrated in
+The approach we chose was to have a GUI that would be completely integrated in
 the Blender GUI.
 
-There where many layers of GUI in Blender: windows, banners, and
+There are three layers of GUI in Blender: windows, banners, and
 panels.
 
 We chose to make panels for simplicity reasons and we put those in the
