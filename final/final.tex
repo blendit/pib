@@ -12,6 +12,7 @@
 \usepackage{subcaption}
 \usepackage{amsmath}
 \usepackage{enumitem}
+%%\usepackage{titling}
 \usepackage{amsthm}
 \usepackage{amsfonts}
 \usepackage{amssymb}
@@ -37,34 +38,46 @@
 
 
 \title{Final report, Blend'it project}
-\author{\bb, \gc, \dl,\\ \vl, \om, \mr,\\ \me, \js, \ps}
+\author{\bb, \gc, \dl,\\ \vl, \om\footnote{was abroad during the second semester, he did not contributed to the second part of the project}, \mr,\\ \me, \js, \ps}
 \date{2015-2016}
 
 
 \begin{document}
 
+\pagenumbering{gobble}
 \maketitle
-
+\vspace{12cm}
 \begin{abstract}
+The goal of this project, ``Blend'it'', was to design two open-source plug-ins for Blender, which is a computer graphics software. These two plug-ins aim to help artists creating complex environments. The first of these plug-in should be able to realistically animate crowds, and the other one to design static environments by making different elements such as rivers and mountains automatically interact to produce realistic scenes. \\
+Although this kind of software is already developed in the Computer Graphics industry, there are often unavailable to the public and not of free to use.
 \end{abstract}
 
 \newpage
+\pagenumbering{arabic}
 
 \tableofcontents
 
 \newpage
 
 \input{intro.tex}
+\newpage
+
 \input{code.tex}
+\newpage
+
 \input{crowd.tex}
+\newpage
+
 \input{env.tex}
+\newpage
+
 \input{conc.tex}
 
 
 \newpage
 \begingroup
 
-\bibliographystyle{alpha}
+\bibliographystyle{ieeetr}
 \bibliography{final}
 
 \endgroup
