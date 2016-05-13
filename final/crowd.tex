@@ -1,12 +1,11 @@
 \section{Crowd plug-in}
 
 The goal of this work package was to implement and integrate into
-Blender an efficient and realistic motion of a crowd . At first we
-wanted to implement a general movement algorithm and an other
+Blender an efficient and realistic motion of a crowd. At first we
+wanted to implement a general movement algorithm and another
 algorithm that would control the animation of the crowd. The second
 part was quite difficult to implement and thus we decided to
 concentrate ourselves on the first part.
-
 
 
 The initial goal was to implement two parts: one creating trajectories
@@ -17,31 +16,29 @@ expertise. We thus decided to focus on the first part.
 
 
 Our code is split into two parts: one that is independent from Blender
-and one that depends on it (see figure \ref{fig:code}).
-
-
-The first part create a set of key points that will represent the
-movement of one person and the second interpolate a trajectory from
-those points. Before presenting these two parts, we explain the
-difficulties encountered when we tried to model human animation.
+and one that depends on it (see Fig.~\ref{fig:code}). The first part
+create a set of key points that will represent the movement of one
+person and the second interpolate a trajectory from those
+points. Before presenting these two parts, we explain the difficulties
+encountered when we tried to model human animation.
 
 
 \subsection{Human animation}
 
 At the beginning we considered animating Humans and started by
 analyzing a theoretical survey of computer animation of Human walking
-(\cite{th_walking}) and looking for what was already done in Blender
+\cite{th_walking} and looking for what was already done in Blender
 concerning automatic walking. All Blender-related resources on walking
 animation are gathered on a web-page
-(\cite{blwikiwalking}). Walk-o-matic and stride add-ons were used in
-previous versions of Blender to ``help to interactively design rough
+\cite{blwikiwalking}. Walk-o-matic and stride add-ons were used in
+previous versions of Blender to ``help interactively design rough
 passes of a walk'' and ``quickly create cycles for background or extra
 characters'', however both were broken on Blender 2.7 and we are using
 Blender 2.76.
 
 Due to the lack of existing tools concerning automatic walking we
 considered creating such a tool ourselves. We started by analyzing
-tutorials on blender character animation (for example
+tutorials on Blender character animation (for example
 \cite{tuto_walk}) and creating such a motion manually. However we soon
 realized how difficult it is to generate a realistic walk due to the
 complex physics behind the movements and decided that it is out of the
@@ -66,9 +63,9 @@ collisions between individuals.
 
 
 Time is discretized, and for each time, we compute the direction to go
-for each individual. We move the in this direction, and iterate this
-principle. This is how we get the final set of points for each
-individuals.
+for each individual. We move the individual in this direction, and
+iterate this principle. This is how we get the final set of points for
+each individuals.
 
 
 \subsubsection{Implementation}
@@ -88,14 +85,14 @@ the graph in the rest of the development. We could test it for small
 values, and for a small number of calls, but the $A^*$ procedure would
 have to be called thousands of times which makes this impractical.  To
 replace the graph we used the euclidean distance, but we had to remove
- static obstacles. Indeed these obstacles were taken into
-account in the graph (no vertices inside an obstacle) and impacted the
-shortest path algorithm $A^*$ but euclidean distance cannot take into
-account such obstacles.
-Also the points (representing people) were not able to avoid packed
-places anymore and just went strait to there goal, same as for obstacles,
-packed places were taken into account by the edges of the graph which weigth
-depended on the crowdedness of the neighbour cells.
+static obstacles. Indeed these obstacles were taken into account in
+the graph (no vertices inside an obstacle) and impacted the shortest
+path algorithm $A^*$ but euclidean distance cannot take into account
+such obstacles.  Also the points (representing people) were not able
+to avoid packed (with people or obstacles) places anymore and just
+went straight to there goal. Packed places were taken into account by
+the edges of the graph which weight depended on the crowdedness of the
+neighbour cells.
 
 \begin{figure}[h!]
   \centering
@@ -113,7 +110,7 @@ depended on the crowdedness of the neighbour cells.
 
 \paragraph{Allowed velocity field}
 
-This part deals with collision avoidance. This part is the part that
+This part deals with collision avoidance, it is the part that
 took us the more time to implement. The problem is the following, you
 have a set of individual (i.e. points) with current velocities. You
 want for each individual a set of velocities that will ensure that if
@@ -133,13 +130,13 @@ one of the main reason it took us time.
 %% Tous les polygones et tous les points sont des shapely._
 
 The other was that some geometrical forms were hard to represent and
-to compute both theoretically and computationally.  Also due to the
-absence of the guide graph, the individuals were not able to go around
-obstacles so it induced bugs, the points tends to get closer and
-closer to the limits of the obstacle until they cross it through
-errors and thus go through obstacles.  In the end, this part does
-return collisions free velocities in 95\% of cases. There are still
-some bugs that we were not able to fix.  %% Figure du beamer ?
+to compute.  Also due to the absence of the guide graph, the
+individuals were not able to go around obstacles so it induced bugs,
+the points tends to get closer and closer to the limits of the
+obstacle until they cross it through errors and thus go through
+obstacles.  In the end, this part does return collisions free
+velocities in 95\% of cases. There are still some bugs that we were
+not able to fix.  %% Figure du beamer ?
 
 
 \begin{figure}[h!]
@@ -158,11 +155,9 @@ individuals: each individual will choose a movement minimizing the
 energy used to get to his/her goal. For that we had two options. The
 first one was to implement a simplex algorithm but the graph did not
 yield linear constraints so this was not a valid way to minimize our
-function.
-
-The second method was to choose an angle and increment it according to
-a $d\theta$ and minimizing the objective function (either a
-graph-based distance or the euclidean distance, corresponding the
+function. The second method was to choose an angle and increment it
+according to a $d\theta$ and minimizing the objective function (either
+a graph-based distance or the euclidean distance, corresponding the
 energy used) on those angles.
 
 %% Quelle fonction ?  
@@ -194,9 +189,9 @@ the one that could be automated easily, that would be compatible with
 a data structure given by our algorithm, that would be precise and
 easy to modify for the user afterwards.
 
-The first option was compatible with our data structure however
-realistic interpolation of the path and possibility to modify a path
-afterwards posed us a lot of questions and we have chosen the second
+The first option was compatible with our data structure. However,
+realistic interpolation of the path and the possibility to modify a path
+afterwards posed us a lot of questions. We have chosen the second
 option which is a more conventional one, makes a clear distinction
 between a path and an object following it and is easy to modify for an
 artist afterwards.
@@ -205,8 +200,7 @@ The main problem to solve was a discrepancy between the data
 structures: position of an object on the path (Bezier or NURBS) is
 given through its distance along the path from the starting point
 while in the data structure given by our algorithm position of the
-point is accessed through its coordinates \textcolor{red}{(ça ça
-montre pas un manque de coordination???)}. This being said we
+point is accessed through its coordinates. This being said we
 had to find a way to link a position in the space to the length of the
 path from the starting point to that position. Blender 2.76 having no
 add-on to measure the length of the path made this task more
@@ -255,11 +249,11 @@ We created it with four main functionalities:
 The second panel provides three of methods to create a crowd:
 \begin{itemize}
 \item save and load
-\item initialisation with default settings
-\item initialisation with random settings
+\item initialization with default settings
+\item initialization with random settings
 \end{itemize}
 
-We also chose to add a personalization feature: from an existing crowd
+We also chose to add a customization feature: from an existing crowd
 (initialized with one of the three methods above) the user can select
 an individual and change all of its settings: initial position, goal,
 size, optimal speed, maximal speed and animation of the individual.
